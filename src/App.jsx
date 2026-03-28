@@ -13,6 +13,9 @@ import NoticiasPage from './pages/NoticiasPage';
 import TransparenciaPage from './pages/TransparenciaPage';
 import ContactoPage from './pages/ContactoPage';
 import InstitucionPage from './pages/InstitucionPage';
+import ConsultaMultasPage from './pages/ConsultaMultasPage';
+import SeguimientoPage from './pages/SeguimientoPage';
+import NoticiaDetailPage from './pages/NoticiaDetailPage';
 
 export default function App() {
   return (
@@ -26,6 +29,7 @@ export default function App() {
             <Route path="/servicios" element={<ServiciosPage />} />
             <Route path="/servicios/:slug" element={<TramiteDetailPage />} />
             <Route path="/noticias" element={<NoticiasPage />} />
+            <Route path="/noticias/:slug" element={<NoticiaDetailPage />} />
             <Route path="/transparencia" element={<TransparenciaPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
             <Route path="/institucion" element={<InstitucionPage />} />
@@ -37,6 +41,11 @@ export default function App() {
               path="/tramite/:slug"
               element={<ProtectedRoute><TramiteOnlinePage /></ProtectedRoute>}
             />
+            <Route
+              path="/consulta-multas"
+              element={<ProtectedRoute><ConsultaMultasPage /></ProtectedRoute>}
+            />
+            <Route path="/seguimiento" element={<SeguimientoPage />} />
           </Route>
         </Routes>
       </AuthProvider>

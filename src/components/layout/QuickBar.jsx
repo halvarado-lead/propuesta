@@ -17,7 +17,7 @@ export default function QuickBar() {
       ),
     },
     {
-      to: '#',
+      to: '/consulta-multas',
       label: 'Consultar multas',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -32,7 +32,7 @@ export default function QuickBar() {
       ),
     },
     {
-      to: '/dashboard',
+      to: '/seguimiento',
       label: 'Seguimiento',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>

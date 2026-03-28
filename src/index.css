@@ -612,16 +612,18 @@ img {
    DIGITO DEL MES + AVISO
    ============================================ */
 .digito-section {
+    padding: 48px 0 32px;
+}
+.digito-section > .digito-banner {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0;
-    margin: 0;
 }
 .digito-banner {
     background: linear-gradient(135deg, #003366 0%, var(--azul-medio) 100%);
     color: var(--blanco);
-    border-radius: 0;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    max-width: 100%;
-    width: 100%;
 }
 .digito-grid {
     display: grid;
@@ -801,11 +803,38 @@ img {
     line-height: 1.4;
     margin-bottom: 8px;
 }
+.noticia-card__categoria {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    color: var(--azul-claro);
+    background: var(--azul-bg);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
 .noticia-card__excerpt {
     font-size: 0.82rem;
     color: var(--gris-500);
     line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+.noticia-card__leer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--azul-claro);
+    margin-top: 12px;
+    transition: gap 0.2s;
+}
+.noticia-card:hover .noticia-card__leer { gap: 10px; }
 
 /* ============================================
    TRANSPARENCIA
@@ -1629,19 +1658,24 @@ img {
 .step-indicator {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 0;
   margin-bottom: 32px;
+  padding: 24px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-200);
+  border-radius: var(--radius-md);
 }
 .step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  min-width: 80px;
 }
 .step-number {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid var(--gris-300);
   display: flex;
@@ -1673,9 +1707,12 @@ img {
 }
 .step.completed .step-label { color: var(--verde-servicio); }
 .step-line {
-  width: 40px;
+  flex: 1;
+  min-width: 30px;
+  max-width: 60px;
   height: 2px;
   background: var(--gris-300);
+  margin-top: 20px;
   margin: 0 8px;
   margin-bottom: 22px;
 }
@@ -2063,6 +2100,990 @@ img {
   .tramites-table { font-size: 0.8rem; }
   .tramites-table th,
   .tramites-table td { padding: 8px 10px; }
+}
+
+/* ===== Noticia Detail ===== */
+.noticia-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+.noticia-detail-back:hover { color: var(--blanco); }
+.noticia-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+.noticia-detail-fecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+}
+.noticia-detail-cat {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    background: rgba(255,255,255,0.15);
+    color: var(--blanco);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+.noticia-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
+}
+.noticia-detail-main {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+.noticia-detail-imagen {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+.noticia-detail-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.noticia-detail-contenido {
+    padding: 32px;
+}
+.noticia-detail-contenido p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--gris-700);
+    margin-bottom: 16px;
+}
+.noticia-detail-contenido ul {
+    margin: 12px 0 20px 20px;
+    padding: 0;
+}
+.noticia-detail-contenido li {
+    font-size: 0.9rem;
+    color: var(--gris-700);
+    line-height: 1.6;
+    margin-bottom: 6px;
+    padding-left: 4px;
+}
+.noticia-detail-compartir {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-top: 1px solid var(--gris-200);
+    font-size: 0.85rem;
+    color: var(--gris-500);
+}
+.noticia-share-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gris-100);
+    color: var(--gris-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.noticia-share-btn:hover {
+    background: var(--azul-primario);
+    color: var(--blanco);
+}
+
+/* Sidebar */
+.noticia-detail-sidebar h3 {
+    font-size: 1rem;
+    color: var(--gris-900);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--azul-primario);
+}
+.noticia-sidebar-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gris-200);
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.noticia-sidebar-item:last-child { border-bottom: none; }
+.noticia-sidebar-item:hover { opacity: 0.8; }
+.noticia-sidebar-img {
+    width: 80px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.noticia-sidebar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.noticia-sidebar-fecha {
+    font-size: 0.7rem;
+    color: var(--gris-400);
+    display: block;
+    margin-bottom: 4px;
+}
+.noticia-sidebar-item h4 {
+    font-size: 0.8rem;
+    color: var(--gris-900);
+    font-weight: 600;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .noticia-detail-layout { grid-template-columns: 1fr; gap: 24px; }
+    .noticia-detail-contenido { padding: 20px; }
+    .noticia-detail-compartir { padding: 12px 20px; }
+}
+
+/* ===== Seguimiento ===== */
+.seguimiento-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 24px;
+}
+.seguimiento-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.seguimiento-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: var(--azul-bg);
+    color: var(--azul-primario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.seguimiento-header h2 { font-size: 1.2rem; color: var(--gris-900); margin-bottom: 4px; }
+.seguimiento-header p { font-size: 0.85rem; color: var(--gris-500); }
+.seguimiento-form-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+}
+.seguimiento-form-row .form-group { flex: 1; }
+.seguimiento-form-row .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gris-700);
+    margin-bottom: 6px;
+}
+.seguimiento-form-row .form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--gris-300);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+.seguimiento-form-row .form-group input:focus {
+    outline: none;
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(0,56,118,0.1);
+}
+.seguimiento-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    white-space: nowrap;
+    height: 42px;
+}
+
+/* Estado card */
+.seguimiento-resultado { margin-top: 8px; }
+.seguimiento-estado-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-left: 4px solid var(--azul-primario);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    margin-bottom: 24px;
+}
+.seguimiento-estado-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.seguimiento-numero {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--gris-900);
+    font-family: monospace;
+}
+.seguimiento-tipo {
+    font-size: 0.9rem;
+    color: var(--gris-500);
+    margin-top: 2px;
+}
+.seguimiento-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: var(--blanco);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.seguimiento-datos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gris-200);
+}
+.seguimiento-dato span {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gris-400);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.seguimiento-dato strong {
+    font-size: 0.85rem;
+    color: var(--gris-900);
+}
+
+/* Historial / Timeline */
+.seguimiento-historial-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    margin-bottom: 24px;
+}
+.seguimiento-historial-card h3 {
+    font-size: 1rem;
+    color: var(--gris-900);
+    margin-bottom: 24px;
+}
+.seguimiento-timeline {
+    position: relative;
+    padding-left: 28px;
+}
+.timeline-item {
+    position: relative;
+    padding-bottom: 24px;
+    padding-left: 20px;
+    border-left: 2px solid var(--gris-200);
+}
+.timeline-item--last { border-left-color: transparent; padding-bottom: 0; }
+.timeline-dot {
+    position: absolute;
+    left: -7px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--blanco);
+    box-shadow: 0 0 0 2px var(--gris-200);
+}
+.timeline-fecha {
+    font-size: 0.75rem;
+    color: var(--gris-400);
+    margin-bottom: 4px;
+}
+.timeline-estado {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gris-900);
+    margin-bottom: 2px;
+}
+.timeline-detalle {
+    font-size: 0.85rem;
+    color: var(--gris-500);
+}
+
+/* Avisos */
+.seguimiento-aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+}
+.seguimiento-aviso strong { display: block; margin-bottom: 4px; font-size: 0.9rem; }
+.seguimiento-aviso p { font-size: 0.85rem; margin: 0; }
+.seguimiento-aviso--danger {
+    background: #fdf2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+.seguimiento-aviso--success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+@media (max-width: 768px) {
+    .seguimiento-form-row { flex-direction: column; }
+    .seguimiento-estado-top { flex-direction: column; gap: 12px; }
+    .seguimiento-datos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Pago Online Modal ===== */
+.pago-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.pago-modal {
+    background: var(--blanco);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease;
+}
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.pago-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--gris-200);
+}
+.pago-modal-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.pago-modal-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--azul-primario);
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pago-modal-header h2 { font-size: 1rem; color: var(--gris-900); margin: 0; }
+.pago-modal-subtitle { font-size: 0.75rem; color: var(--gris-500); }
+.pago-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--gris-400);
+    line-height: 1;
+    padding: 0 4px;
+}
+.pago-modal-close:hover { color: var(--gris-700); }
+
+/* Progress */
+.pago-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    background: var(--gris-50);
+}
+.pago-progress-step {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--gris-400);
+}
+.pago-progress-step::after {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: var(--gris-200);
+    margin-left: 6px;
+}
+.pago-progress-step:last-child::after { display: none; }
+.pago-progress-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--gris-200);
+    color: var(--gris-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+.pago-progress-step--active .pago-progress-circle {
+    background: var(--azul-primario);
+    color: var(--blanco);
+}
+.pago-progress-step--active { color: var(--azul-primario); font-weight: 600; }
+.pago-progress-step--done .pago-progress-circle {
+    background: #27ae60;
+    color: var(--blanco);
+}
+.pago-progress-step--done::after { background: #27ae60; }
+
+/* Resumen bar */
+.pago-resumen-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: var(--azul-bg);
+    font-size: 0.85rem;
+    color: var(--gris-700);
+}
+.pago-resumen-bar strong {
+    font-size: 1.1rem;
+    color: var(--azul-primario);
+}
+
+/* Body */
+.pago-body {
+    padding: 24px;
+}
+.pago-body h3 {
+    font-size: 0.95rem;
+    color: var(--gris-900);
+    margin-bottom: 16px;
+}
+
+/* Metodos */
+.pago-metodos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.pago-metodo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 2px solid var(--gris-200);
+    border-radius: var(--radius-md);
+    background: var(--blanco);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    color: var(--gris-700);
+    text-align: left;
+}
+.pago-metodo:hover { border-color: var(--azul-claro); }
+.pago-metodo--active {
+    border-color: var(--azul-primario);
+    background: var(--azul-bg);
+    color: var(--azul-primario);
+    font-weight: 600;
+}
+.pago-metodo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: var(--gris-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gris-500);
+}
+.pago-metodo--active .pago-metodo-icon {
+    background: var(--azul-primario);
+    color: var(--blanco);
+}
+
+/* Form */
+.pago-form { display: flex; flex-direction: column; gap: 14px; }
+.pago-form .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gris-700);
+    margin-bottom: 6px;
+}
+.pago-form .form-group input,
+.pago-form .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--gris-300);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+.pago-form .form-group input:focus,
+.pago-form .form-group select:focus {
+    outline: none;
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(0,56,118,0.1);
+}
+.pago-form-row { display: flex; gap: 14px; }
+.pago-form-row .form-group { flex: 1; }
+
+/* Cuenta destino */
+.pago-cuenta-destino {
+    background: var(--gris-50);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+.pago-cuenta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gris-500);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.pago-cuenta-dato {
+    font-size: 0.85rem;
+    color: var(--gris-700);
+    margin-bottom: 2px;
+}
+.pago-cuenta-dato span {
+    color: var(--gris-500);
+    font-size: 0.8rem;
+}
+
+/* Confirmacion */
+.pago-confirmacion-detalle {
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+.pago-conf-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--gris-100);
+}
+.pago-conf-row:last-child { border-bottom: none; }
+.pago-conf-row span { color: var(--gris-500); }
+.pago-conf-row strong { color: var(--gris-900); }
+.pago-conf-row--total {
+    background: var(--azul-bg);
+}
+.pago-conf-row--total strong {
+    font-size: 1.1rem;
+    color: var(--azul-primario);
+}
+
+/* Aviso seguridad */
+.pago-aviso {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: var(--radius-sm);
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: #92400e;
+}
+
+/* Exito */
+.pago-exito { text-align: center; }
+.pago-exito-icon { margin-bottom: 16px; }
+.pago-exito h3 { color: #27ae60; font-size: 1.1rem; }
+.pago-exito-comprobante {
+    font-size: 0.9rem;
+    color: var(--gris-500);
+    margin: 8px 0 16px;
+}
+.pago-exito-nota {
+    font-size: 0.8rem;
+    color: var(--gris-500);
+    margin-top: 16px;
+}
+
+/* Footer */
+.pago-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--gris-200);
+    background: var(--gris-50);
+}
+.pago-modal-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Wizard pago section */
+.wizard-pago-info {
+    margin-bottom: 24px;
+}
+.wizard-pago-info h3 { margin-bottom: 8px; }
+.wizard-pago-info p { color: var(--gris-500); font-size: 0.9rem; }
+.wizard-pago-detalle {
+    background: var(--gris-50);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-top: 16px;
+}
+.wizard-pago-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 0.9rem;
+}
+.wizard-pago-row span { color: var(--gris-500); }
+.wizard-pago-exito {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-md);
+    margin-top: 16px;
+}
+.wizard-pago-exito strong { color: #166534; font-size: 0.95rem; }
+.wizard-pago-exito p { color: #15803d; font-size: 0.8rem; margin-top: 4px; }
+
+/* Multas pagar todas */
+.multas-pagar-todas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--azul-bg);
+    border: 1px solid rgba(0,56,118,0.15);
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+}
+.multas-pagar-todas-info { font-size: 0.9rem; color: var(--gris-700); }
+.multas-pagar-todas-info strong {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--azul-primario);
+    margin-top: 2px;
+}
+.multas-pagar-todas .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== Consulta de Multas ===== */
+.multas-consulta-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 24px;
+}
+.multas-consulta-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.multas-consulta-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: var(--azul-bg);
+    color: var(--azul-primario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.multas-consulta-header h2 {
+    font-size: 1.2rem;
+    color: var(--gris-900);
+    margin-bottom: 4px;
+}
+.multas-consulta-header p {
+    font-size: 0.85rem;
+    color: var(--gris-500);
+}
+.multas-form-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+}
+.multas-form-row .form-group {
+    flex: 1;
+}
+.multas-form-row .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gris-700);
+    margin-bottom: 6px;
+}
+.multas-form-row .form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--gris-300);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+.multas-form-row .form-group input:focus {
+    outline: none;
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(0, 56, 118, 0.1);
+}
+.multas-btn-consultar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    white-space: nowrap;
+    height: 42px;
+}
+.spinner-small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Resumen */
+.multas-resumen {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.multas-resumen-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid transparent;
+}
+.multas-resumen-card--total { border-top-color: var(--azul-primario); }
+.multas-resumen-card--pendiente { border-top-color: #e74c3c; }
+.multas-resumen-card--pagada { border-top-color: #27ae60; }
+.multas-resumen-card--puntos { border-top-color: #f39c12; }
+.multas-resumen-card--monto { border-top-color: #e74c3c; }
+.multas-resumen-numero {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--gris-900);
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.multas-resumen-label {
+    font-size: 0.75rem;
+    color: var(--gris-500);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+/* Tabla de multas */
+.multas-tabla-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+.multas-tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--gris-200);
+}
+.multas-tabla-header h3 {
+    font-size: 1rem;
+    color: var(--gris-900);
+}
+.multas-tabs {
+    display: flex;
+    gap: 4px;
+}
+.multas-tab {
+    padding: 6px 14px;
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    font-size: 0.8rem;
+    color: var(--gris-500);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.multas-tab:hover { color: var(--azul-primario); border-color: var(--azul-claro); }
+.multas-tab--active {
+    background: var(--azul-primario);
+    color: var(--blanco);
+    border-color: var(--azul-primario);
+}
+.multas-tabla-responsive { overflow-x: auto; }
+.multas-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+.multas-tabla th {
+    background: var(--gris-50);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gris-500);
+    font-weight: 600;
+    white-space: nowrap;
+}
+.multas-tabla td {
+    padding: 12px 16px;
+    border-top: 1px solid var(--gris-100);
+    color: var(--gris-700);
+}
+.multas-tabla tr:hover td { background: var(--gris-50); }
+.multas-tabla-id { font-family: monospace; font-size: 0.8rem; color: var(--gris-500); }
+.multas-tabla-articulo { font-size: 0.78rem; color: var(--gris-400); }
+.multas-tabla-monto { font-weight: 700; color: var(--gris-900); }
+.multas-placa {
+    display: inline-block;
+    background: var(--gris-100);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.multas-estado {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.multas-estado--pendiente {
+    background: #fdf2f2;
+    color: #e74c3c;
+}
+.multas-estado--pagada {
+    background: #f0fdf4;
+    color: #27ae60;
+}
+
+/* Sin resultados */
+.multas-sin-resultados {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+    color: #27ae60;
+}
+.multas-sin-resultados h3 {
+    color: var(--gris-900);
+    margin: 16px 0 8px;
+    font-size: 1.1rem;
+}
+.multas-sin-resultados p {
+    color: var(--gris-500);
+    font-size: 0.9rem;
+}
+
+/* Puntos de pago */
+.multas-pago-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    margin-bottom: 24px;
+}
+.multas-pago-card h3 {
+    font-size: 1rem;
+    color: var(--gris-900);
+    margin-bottom: 4px;
+}
+.multas-pago-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+.multas-pago-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-md);
+}
+.multas-pago-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: var(--azul-bg);
+    color: var(--azul-primario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.multas-pago-nombre { font-weight: 700; font-size: 0.85rem; color: var(--gris-900); }
+.multas-pago-tipo { font-size: 0.75rem; color: var(--azul-claro); font-weight: 500; }
+.multas-pago-dir { font-size: 0.75rem; color: var(--gris-500); margin-top: 2px; }
+
+@media (max-width: 768px) {
+    .multas-form-row { flex-direction: column; }
+    .multas-resumen { grid-template-columns: repeat(2, 1fr); }
+    .multas-tabla-header { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .multas-pago-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .multas-resumen { grid-template-columns: 1fr; }
+    .multas-consulta-card { padding: 20px; }
 }
 
 /* ===== Print (React additions) ===== */

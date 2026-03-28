@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import PagoOnlineModal from '../ui/PagoOnlineModal';
 
 export default function TramiteWizard({ tramite, onComplete }) {
   const { saveTramite } = useAuth();
@@ -8,11 +9,14 @@ export default function TramiteWizard({ tramite, onComplete }) {
   const [files, setFiles] = useState({});
   const [completado, setCompletado] = useState(false);
   const [tramiteGuardado, setTramiteGuardado] = useState(null);
+  const [pagoModal, setPagoModal] = useState(false);
+  const [pagado, setPagado] = useState(false);
 
   const pasos = tramite.pasos;
   const paso = pasos[pasoActual];
   const esUltimoPaso = pasoActual === pasos.length - 1;
   const esPasoRevision = paso.campos.length === 0 && !esUltimoPaso;
+  const esPasoPago = paso.titulo.toLowerCase().includes('pago');
 
   const updateField = (nombre, valor) => {
     setFormData((prev) => ({ ...prev, [nombre]: valor }));
@@ -24,6 +28,7 @@ export default function TramiteWizard({ tramite, onComplete }) {
 
   const canProceed = () => {
     if (esPasoRevision || esUltimoPaso) return true;
+    if (esPasoPago) return pagado;
     return paso.campos.every((campo) => {
       if (!campo.required) return true;
       if (campo.tipo === 'file') return !!files[campo.nombre];
@@ -50,6 +55,16 @@ export default function TramiteWizard({ tramite, onComplete }) {
 
   const anterior = () => {
     if (pasoActual > 0) setPasoActual((p) => p - 1);
+  };
+
+  const handlePagoExitoso = (datoPago) => {
+    setPagado(true);
+    setFormData(prev => ({
+      ...prev,
+      pagoComprobante: datoPago.comprobante,
+      pagoMetodo: datoPago.metodo,
+      pagoFecha: datoPago.fecha,
+    }));
   };
 
   const renderCampo = (campo) => {
@@ -112,7 +127,7 @@ export default function TramiteWizard({ tramite, onComplete }) {
     <div className="wizard-summary">
       <h3 className="mb-2">Resumen de datos ingresados</h3>
       <dl>
-        {Object.entries(formData).map(([key, value]) => {
+        {Object.entries(formData).filter(([key]) => !key.startsWith('pago')).map(([key, value]) => {
           const campo = pasos.flatMap((p) => p.campos).find((c) => c.nombre === key);
           return (
             <div key={key} style={{ display: 'contents' }}>
@@ -134,6 +149,53 @@ export default function TramiteWizard({ tramite, onComplete }) {
     </div>
   );
 
+  const renderPasoPago = () => (
+    <div className="wizard-pago">
+      <div className="wizard-pago-info">
+        <h3>Pago del tramite</h3>
+        <p>Para continuar con su tramite, debe realizar el pago correspondiente.</p>
+        <div className="wizard-pago-detalle">
+          <div className="wizard-pago-row">
+            <span>Tramite:</span>
+            <strong>{tramite.nombre}</strong>
+          </div>
+          <div className="wizard-pago-row">
+            <span>Costo aproximado:</span>
+            <strong>{tramite.costoAproximado}</strong>
+          </div>
+        </div>
+      </div>
+      {pagado ? (
+        <div className="wizard-pago-exito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#27ae60" strokeWidth="2" width="40" height="40">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          <div>
+            <strong>Pago realizado exitosamente</strong>
+            <p>Comprobante: {formData.pagoComprobante}</p>
+          </div>
+        </div>
+      ) : (
+        <button className="btn btn-primary btn-lg" onClick={() => setPagoModal(true)}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+            <rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" />
+          </svg>
+          Realizar pago en linea
+        </button>
+      )}
+      {paso.campos.length > 0 && !pagado && (
+        <div style={{ marginTop: 24 }}>
+          <p className="text-muted" style={{ fontSize: '0.85rem', marginBottom: 12 }}>
+            Si ya realizo el pago por otro medio, ingrese los datos manualmente:
+          </p>
+          <div className="form-step">
+            {paso.campos.map(renderCampo)}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
   const renderConfirmacion = () => {
     if (!completado) {
       return renderRevision();
@@ -150,6 +212,7 @@ export default function TramiteWizard({ tramite, onComplete }) {
         <p>Su solicitud ha sido registrada y sera procesada por nuestro equipo.</p>
         <div className="numero-tramite">ATM-{String(tramiteGuardado?.id).slice(-6)}</div>
         <p><strong>Estado:</strong> En revision</p>
+        {pagado && <p><strong>Pago:</strong> Confirmado - {formData.pagoComprobante}</p>}
         <p className="text-muted mt-2">
           Puede consultar el estado de su tramite en su panel de control.
           Le notificaremos por correo electronico cuando haya actualizaciones.
@@ -157,6 +220,9 @@ export default function TramiteWizard({ tramite, onComplete }) {
       </div>
     );
   };
+
+  // Extract cost number for payment modal
+  const costoNum = parseFloat((tramite.costoAproximado || '').replace(/[^0-9.]/g, '')) || 62;
 
   return (
     <div className="wizard">
@@ -178,6 +244,8 @@ export default function TramiteWizard({ tramite, onComplete }) {
 
           {esUltimoPaso ? (
             renderConfirmacion()
+          ) : esPasoPago ? (
+            renderPasoPago()
           ) : esPasoRevision ? (
             renderRevision()
           ) : (
@@ -212,6 +280,15 @@ export default function TramiteWizard({ tramite, onComplete }) {
           )}
         </div>
       </div>
+
+      <PagoOnlineModal
+        isOpen={pagoModal}
+        onClose={() => setPagoModal(false)}
+        concepto={tramite.nombre}
+        monto={costoNum}
+        referencia={`TRM-${Date.now().toString().slice(-6)}`}
+        onPagoExitoso={handlePagoExitoso}
+      />
     </div>
   );
 }

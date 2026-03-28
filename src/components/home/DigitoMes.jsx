@@ -21,6 +21,7 @@ export default function DigitoMes() {
 
   return (
     <section className="digito-section" aria-label="Digito de revision vehicular del mes">
+      <div className="container">
       <div className="digito-banner">
         <div className="digito-grid">
           <div className="digito-left">
@@ -45,6 +46,7 @@ export default function DigitoMes() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
