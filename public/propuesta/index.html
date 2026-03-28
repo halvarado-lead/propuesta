@@ -6,10 +6,10 @@
 <title>Propuesta Tecnica - Rediseno Portal ATM Centro Guayas EP</title>
 <script>
   (function() {
-    var session = localStorage.getItem('atm_session');
+    var session = localStorage.getItem("atm_session");
     if (!session) {
-      document.documentElement.innerHTML = '';
-      window.location.href = '/login?returnUrl=/propuesta';
+      document.documentElement.innerHTML = "";
+      window.location.href = "/login?returnUrl=/propuesta";
     }
   })();
 </script>
@@ -341,12 +341,12 @@
 <!-- ===================== PORTADA ===================== -->
 <div style="text-align: center; margin-top: 100px; margin-bottom: 80px;">
   <p style="font-size: 36pt; font-weight: bold; color: #003876; margin-bottom: 10px;">ATM</p>
-  <h1 style="text-align: center;">Propuesta Tecnica</h1>
-  <h2 style="text-align: center; border-bottom: none;">Rediseno del Portal Web Institucional</h2>
+  <h1 style="text-align: center;">Propuesta T&eacute;cnica</h1>
+  <h2 style="text-align: center; border-bottom: none;">Redise&ntilde;o del Portal Web Instituci&oacute;nal</h2>
   <hr style="width: 60px; border: 2px solid #003876; margin: 20px auto;">
   <h2 style="text-align: center; border-bottom: none;">Plataforma Digital de Servicios Ciudadanos</h2>
   <p style="text-align: center; margin-top: 20px;">
-    Autoridad de Transito Mancomunada Centro Guayas EP
+    Autoridad de Tr&aacute;nsito Mancomunada Centro Guayas EP
   </p>
   <p style="text-align: center; margin-top: 40px;">
     <strong>Version:</strong> 1.0<br>
@@ -360,69 +360,68 @@
   <h2>Tabla de Contenidos</h2>
   <ul>
     <li><a href="#sec1">1. Resumen Ejecutivo</a></li>
-    <li><a href="#sec2">2. Diagnostico del Sitio Actual</a></li>
-    <li><a href="#sec3">3. Arquitectura y Stack Tecnologico</a></li>
-    <li><a href="#sec4">4. Identidad Visual y Sistema de Diseno</a></li>
+    <li><a href="#sec2">2. Diagn&oacute;stico del Sitio Actual</a></li>
+    <li><a href="#sec3">3. Arquitectura y Stack Tecnol&oacute;gico</a></li>
+    <li><a href="#sec4">4. Identidad Visual y Sistema de Dise&ntilde;o</a></li>
     <li class="toc-sub"><a href="#sec4-1">4.1 Paleta de colores</a></li>
-    <li class="toc-sub"><a href="#sec4-2">4.2 Tipografia</a></li>
+    <li class="toc-sub"><a href="#sec4-2">4.2 Tipograf&iacute;a</a></li>
     <li class="toc-sub"><a href="#sec4-3">4.3 Componentes UI</a></li>
-    <li class="toc-sub"><a href="#sec4-4">4.4 Diseno responsive</a></li>
+    <li class="toc-sub"><a href="#sec4-4">4.4 Dise&ntilde;o responsive</a></li>
     <li class="toc-sub"><a href="#sec4-5">4.5 Accesibilidad</a></li>
     <li><a href="#sec5">5. Estructura del Portal</a></li>
-    <li class="toc-sub"><a href="#sec5-1">5.1 Pagina principal</a></li>
-    <li class="toc-sub"><a href="#sec5-2">5.2 Institucion</a></li>
+    <li class="toc-sub"><a href="#sec5-1">5.1 P&aacute;gina principal</a></li>
+    <li class="toc-sub"><a href="#sec5-2">5.2 Instituci&oacute;n</a></li>
     <li class="toc-sub"><a href="#sec5-3">5.3 Catalogo de servicios</a></li>
     <li class="toc-sub"><a href="#sec5-4">5.4 Noticias</a></li>
     <li class="toc-sub"><a href="#sec5-5">5.5 Transparencia (LOTAIP)</a></li>
     <li class="toc-sub"><a href="#sec5-6">5.6 Contacto</a></li>
-    <li><a href="#sec6">6. Sistema de Autenticacion y Registro</a></li>
+    <li><a href="#sec6">6. Sistema de Autenticaci&oacute;n y Registro</a></li>
     <li><a href="#sec7">7. Dashboard del Ciudadano</a></li>
-    <li><a href="#sec8">8. Tramites en Linea</a></li>
-    <li class="toc-sub"><a href="#sec8-1">8.1 Catalogo de tramites</a></li>
+    <li><a href="#sec8">8. Tr&aacute;mites en Linea</a></li>
+    <li class="toc-sub"><a href="#sec8-1">8.1 Catalogo de tr&aacute;mites</a></li>
     <li class="toc-sub"><a href="#sec8-2">8.2 Wizard multi-paso</a></li>
     <li class="toc-sub"><a href="#sec8-3">8.3 Sistema de pago online</a></li>
     <li class="toc-sub"><a href="#sec8-4">8.4 Agendamiento de citas</a></li>
-    <li class="toc-sub"><a href="#sec8-5">8.5 Evaluacion del servicio (encuesta)</a></li>
+    <li class="toc-sub"><a href="#sec8-5">8.5 Evaluaci&oacute;n del servicio (encuesta)</a></li>
     <li><a href="#sec9">9. Consulta de Multas e Infracciones</a></li>
-    <li><a href="#sec10">10. Seguimiento de Tramites</a></li>
+    <li><a href="#sec10">10. Seguimiento de Tr&aacute;mites</a></li>
     <li><a href="#sec11">11. Seguridad de la Plataforma</a></li>
-    <li><a href="#sec12">12. Integracion con Sistemas Existentes</a></li>
-    <li class="toc-sub"><a href="#sec12-1">12.1 Integracion con Odoo (sistema de turnos)</a></li>
+    <li><a href="#sec12">12. Integraci&oacute;n con Sistemas Existentes</a></li>
+    <li class="toc-sub"><a href="#sec12-1">12.1 Integraci&oacute;n con Odoo (sistema de turnos)</a></li>
     <li class="toc-sub"><a href="#sec12-2">12.2 Servicios de consulta de multas</a></li>
-    <li><a href="#sec13">13. Infraestructura y Opciones de Despliegue</a></li>
-    <li><a href="#sec14">14. Presupuesto Estimado</a></li>
-    <li><a href="#sec15">15. Cronograma de Implementacion</a></li>
-    <li><a href="#sec16">16. Conclusiones y Proximos Pasos</a></li>
+    <li><a href="#sec13">13. Infraestructura y Opci&oacute;nes de Despliegue</a></li>
+    <li><a href="#sec14">14. Cronograma de Implementaci&oacute;n</a></li>
+    <li><a href="#sec15">15. Conclusiones y Pr&oacute;ximos Pasos</a></li>
   </ul>
 </div>
 
 <!-- ===================== 1. RESUMEN EJECUTIVO ===================== -->
 <h2 id="sec1">1. Resumen Ejecutivo</h2>
 
-<p>La presente propuesta tecnica detalla el rediseno integral del portal web institucional de la <strong>Autoridad de Transito Mancomunada Centro Guayas EP (ATM Centro Guayas)</strong>, entidad publica encargada de la gestion del transito, transporte terrestre y seguridad vial en siete cantones de la provincia del Guayas: <strong>Nobol, Daule, Lomas de Sargentillo, Isidro Ayora, Pedro Carbo, Santa Lucia y Colimes</strong>.</p>
+<p>La presente propuesta t&eacute;cnica detalla el redise&ntilde;o integral del portal web instituci&oacute;nal de la <strong>Autoridad de Tr&aacute;nsito Mancomunada Centro Guayas EP (ATM Centro Guayas)</strong>, entidad p&uacute;blica encargada de la gesti&oacute;n del tr&aacute;nsito, transporte terrestre y seguridad vial en siete cantones de la provincia del Guayas: <strong>Nobol, Daule, Lomas de Sargentillo, Isidro Ayora, Pedro Carbo, Santa Lucia y Colimes</strong>.</p>
 
-<p>El portal actual, desarrollado sobre Joomla 3 &mdash;un CMS cuyo soporte oficial finalizo en agosto de 2023&mdash;, presenta limitaciones criticas en materia de seguridad, rendimiento, experiencia de usuario y ausencia total de servicios digitales transaccionales. El ciudadano que requiere realizar un tramite vehicular debe desplazarse fisicamente a una de las tres oficinas de la mancomunidad, con los costos de tiempo y recursos que esto implica.</p>
+<p>El portal actual, desarrollado sobre Joomla 3 &mdash;un CMS cuyo soporte oficial finalizo en agosto de 2023&mdash;, presenta limitaciones cr&iacute;ticas en materia de seguridad, rendimiento, experiencia de usuario y ausencia total de servicios digitales transacci&oacute;nales. El ciudada&ntilde;o que requiere realizar un tr&aacute;mite vehicular debe desplazarse f&iacute;sicamente a una de las tres oficinas de la mancomunidad, con los costos de tiempo y recursos que esto implica.</p>
 
-<p>La solucion propuesta consiste en una <strong>plataforma web moderna</strong> construida con tecnologias actuales de desarrollo, que incorpora:</p>
+<p>La soluci&oacute;n propuesta consiste en una <strong>plataforma web moderna</strong> construida con tecnolog&iacute;as actuales de desarrollo, que incorpora:</p>
 
 <ul>
-  <li><strong>Tramites vehiculares en linea</strong> con formularios guiados paso a paso (wizard), carga de documentos digitales y pago online integrado.</li>
-  <li><strong>Consulta de multas e infracciones</strong> en tiempo real con opciones de pago inmediato.</li>
-  <li><strong>Seguimiento de tramites</strong> mediante numero de referencia, permitiendo al ciudadano conocer el estado de sus solicitudes sin acudir presencialmente.</li>
-  <li><strong>Portal informativo</strong> con noticias institucionales, transparencia (LOTAIP), informacion sobre oficinas y servicios.</li>
-  <li><strong>Dashboard personalizado</strong> para cada ciudadano registrado, con historial de tramites y notificaciones.</li>
+  <li><strong>Tr&aacute;mites vehiculares en l&iacute;nea</strong> con formularios guiados paso a paso (wizard), carga de documentos digitales y pago online integrado.</li>
+  <li><strong>Consulta de multas e infracci&oacute;nes</strong> en tiempo real con opci&oacute;nes de pago inmediato.</li>
+  <li><strong>Seguimiento de tr&aacute;mites</strong> mediante n&uacute;mero de referencia, permitiendo al ciudada&ntilde;o conocer el estado de sus solicitudes sin acudir presencialmente.</li>
+  <li><strong>Portal informativo</strong> con noticias instituci&oacute;nales, transparencia (LOTAIP), informaci&oacute;n sobre oficinas y servicios.</li>
+  <li><strong>Dashboard personalizado</strong> para cada ciudada&ntilde;o registrado, con historial de tr&aacute;mites y notificaciones.</li>
 </ul>
 
 <blockquote>
-  <strong>Impacto estimado:</strong> La digitalizacion de los cuatro tramites vehiculares mas frecuentes (matriculacion primera vez, renovacion, duplicado de placas y transferencia de dominio) puede reducir en un <strong>60-70%</strong> la necesidad de visitas presenciales, beneficiando directamente a mas de <strong>350,000 habitantes</strong> de los cantones mancomunados.
+  <strong>Impacto estimado:</strong> La digitalizaci&oacute;n de los cuatro tr&aacute;mites vehiculares mas frecuentes (matr&iacute;culaci&oacute;n primera vez, renovaci&oacute;n, duplicado de placas y transferencia de dominio) puede reducir en un <strong>60-70%</strong> la necesidad de visitas presenciales, beneficiando directamente a mas de <strong>350,000 habitantes</strong> de los cantones mancomunados.
 </blockquote>
 
 <!-- ===================== 2. DIAGNOSTICO ===================== -->
-<h2 id="sec2" class="page-break">2. Diagnostico del Sitio Actual</h2>
+<h2 id="sec2" class="page-break">2. Diagn&oacute;stico del Sitio Actual</h2>
 
-<p>La presente propuesta de rediseno surge de la necesidad critica de actualizar la plataforma web institucional de ATM Centro Guayas EP. El sitio web actual fue implementado sobre Joomla 3, un sistema de gestion de contenidos (CMS) de codigo abierto que alcanzo su fin de vida util (End of Life) en agosto de 2023. Esto significa que el proyecto Joomla ya no publica actualizaciones de seguridad, parches ni correcciones de errores para esta version, dejando al portal expuesto a vulnerabilidades conocidas y sin posibilidad de soporte tecnico oficial.</p>
+<p>La presente propuesta de redise&ntilde;o surge de la necesidad cr&iacute;tica de actualizar la plataforma web instituci&oacute;nal de ATM Centro Guayas EP. El sitio web actual fue implementado sobre Joomla 3, un sistema de gesti&oacute;n de contenidos (CMS) de c&oacute;digo abierto que alcanzo su fin de vida util (End of Life) en agosto de 2023. Esto significa que el proyecto Joomla ya no p&uacute;blica actualizaci&oacute;nes de seguridad, parches ni correcciones de errores para esta version, dejando al portal expuesto a vulnerabilidades conocidas y sin posibilidad de soporte t&eacute;cnico oficial.</p>
 
-<p>Joomla 3 fue lanzado en 2012 y, si bien cumplio un rol importante en su momento, la evolucion de las tecnologias web, los estandares de accesibilidad, las expectativas ciudadanas de servicios digitales y los requerimientos normativos de gobierno electronico han dejado obsoleta esta plataforma. La migracion a Joomla 4 o 5 implicaria una reconstruccion casi total del sitio sin resolver las carencias funcionales fundamentales (ausencia de tramites en linea, pagos digitales y trazabilidad de procesos). Por esta razon, se propone un rediseno integral sobre tecnologias modernas que permitan no solo actualizar la presencia web, sino transformar digitalmente la operacion de la entidad.</p>
+<p>Joomla 3 fue lanzado en 2012 y, si bien cumplio un rol importante en su momento, la evolucion de las tecnolog&iacute;as web, los est&aacute;ndares de accesibilidad, las expectativas ciudadanas de servicios digitales y los requerimientos normativos de gobierno electr&oacute;nico han dejado obsoleta esta plataforma. La migraci&oacute;n a Joomla 4 o 5 implicaria una reconstruccion casi total del sitio sin resolver las carencias funcionales fundamentales (ausencia de tr&aacute;mites en l&iacute;nea, pagos digitales y trazabilidad de procesos). Por esta razon, se propone un redise&ntilde;o integral sobre tecnolog&iacute;as modernas que permitan no solo actualizar la presencia web, sino transformar digitalmente la operacion de la entidad.</p>
 
 <h3>Principales deficiencias identificadas</h3>
 
@@ -431,36 +430,36 @@
     <tr><th>Area</th><th>Problema</th><th>Impacto</th></tr>
   </thead>
   <tbody>
-    <tr><td>Tecnologia</td><td>Joomla 3 sin soporte, PHP desactualizado</td><td>Vulnerabilidades de seguridad criticas</td></tr>
-    <tr><td>Servicios digitales</td><td>Inexistentes: no hay tramites ni pagos online</td><td>100% de tramites requieren presencia fisica</td></tr>
-    <tr><td>Responsive</td><td>Diseno no adaptable a dispositivos moviles</td><td>Experiencia degradada en smartphones (65%+ del trafico)</td></tr>
-    <tr><td>Rendimiento</td><td>Tiempo de carga superior a 8 segundos</td><td>Alta tasa de abandono, mala percepcion institucional</td></tr>
-    <tr><td>Accesibilidad</td><td>No cumple estandares WCAG</td><td>Exclusion de usuarios con discapacidades</td></tr>
-    <tr><td>Contenido</td><td>Informacion desactualizada, navegacion confusa</td><td>El ciudadano no encuentra lo que busca</td></tr>
-    <tr><td>SEO</td><td>Sin optimizacion para motores de busqueda</td><td>Baja visibilidad en Google</td></tr>
+    <tr><td>Tecnolog&iacute;a</td><td>Joomla 3 sin soporte, PHP desactualizado</td><td>Vulnerabilidades de seguridad cr&iacute;ticas</td></tr>
+    <tr><td>Servicios digitales</td><td>Inexistentes: no hay tr&aacute;mites ni pagos online</td><td>100% de tr&aacute;mites requieren presencia f&iacute;sica</td></tr>
+    <tr><td>Responsive</td><td>Dise&ntilde;o no adaptable a dispositivos m&oacute;viles</td><td>Experiencia degradada en smartphones (65%+ del tr&aacute;fico)</td></tr>
+    <tr><td>Rendimiento</td><td>Tiempo de carga superior a 8 segundos</td><td>Alta tasa de abandono, mala percepcion instituci&oacute;nal</td></tr>
+    <tr><td>Accesibilidad</td><td>No cumple est&aacute;ndares WCAG</td><td>Exclusion de usuarios con discapacidades</td></tr>
+    <tr><td>Contenido</td><td>Informaci&oacute;n desactualizada, navegaci&oacute;n confusa</td><td>El ciudada&ntilde;o no encuentra lo que busca</td></tr>
+    <tr><td>SEO</td><td>Sin optimizacion para motores de b&uacute;squeda</td><td>Baja visibilidad en Google</td></tr>
   </tbody>
 </table>
 
 <h3>Oportunidad de mejora</h3>
-<p>El Gobierno Nacional de Ecuador, a traves del <strong>Plan de Gobierno Electronico</strong> y la <strong>Ley Organica de Transparencia y Acceso a la Informacion Publica (LOTAIP)</strong>, establece que las entidades publicas deben facilitar el acceso ciudadano a traves de medios digitales. La modernizacion del portal de ATM Centro Guayas no solo es una mejora tecnica, sino un <strong>cumplimiento normativo</strong> que posiciona a la institucion como referente de gobierno digital en la provincia del Guayas.</p>
+<p>El Gobierno Nacional de Ecuador, a traves del <strong>Plan de Gobierno Electronico</strong> y la <strong>Ley Org&aacute;nica de Transparencia y Acceso a la Informaci&oacute;n Publica (LOTAIP)</strong>, establece que las entidades p&uacute;blicas deben facilitar el acceso ciudada&ntilde;o a traves de medios digitales. La modernizacion del portal de ATM Centro Guayas no solo es una mejora t&eacute;cnica, sino un <strong>cumplimiento normativo</strong> que posiciona a la instituci&oacute;n como referente de gobierno digital en la provincia del Guayas.</p>
 
 <!-- ===================== 3. ARQUITECTURA ===================== -->
-<h2 id="sec3" class="page-break">3. Arquitectura y Stack Tecnologico</h2>
+<h2 id="sec3" class="page-break">3. Arquitectura y Stack Tecnol&oacute;gico</h2>
 
-<h3>3.1 Seleccion tecnologica</h3>
+<h3>3.1 Selecci&oacute;n tecnologica</h3>
 
-<p>La plataforma se desarrolla como una <strong>Single Page Application (SPA)</strong>, un patron arquitectonico que carga una unica pagina HTML y actualiza dinamicamente el contenido sin recargas completas del navegador. Esto proporciona una experiencia fluida, similar a una aplicacion nativa, con tiempos de navegacion entre secciones practicamente instantaneos.</p>
+<p>La plataforma se desarrolla como una <strong>Single Page Application (SPA)</strong>, un patron arquitectonico que carga una unica p&aacute;gina HTML y actualiza dinamicamente el contenido sin recargas completas del navegador. Esto proporciona una experiencia fluida, similar a una aplicaci&oacute;n nativa, con tiempos de navegaci&oacute;n entre secci&oacute;nes practicamente instantaneos.</p>
 
 <table>
   <thead>
-    <tr><th>Tecnologia</th><th>Version</th><th>Justificacion</th></tr>
+    <tr><th>Tecnolog&iacute;a</th><th>Version</th><th>Justificaci&oacute;n</th></tr>
   </thead>
   <tbody>
     <tr><td><strong>React</strong></td><td>19.x</td><td>Libreria de interfaces de usuario mas utilizada del ecosistema, con la mayor comunidad de soporte y ecosistema de componentes. Respaldada por Meta (Facebook). Curva de aprendizaje accesible para mantenimiento futuro.</td></tr>
-    <tr><td><strong>Vite</strong></td><td>6.x</td><td>Herramienta de construccion de nueva generacion que ofrece tiempos de compilacion hasta 10x mas rapidos que Webpack (Create React App). Hot Module Replacement instantaneo durante el desarrollo.</td></tr>
-    <tr><td><strong>React Router</strong></td><td>v7</td><td>Solucion de enrutamiento estandar para aplicaciones React. Permite navegacion entre paginas sin recarga, con soporte para rutas protegidas (autenticacion), parametros dinamicos y carga diferida.</td></tr>
-    <tr><td><strong>CSS Custom Properties</strong></td><td>Nativo</td><td>Variables CSS nativas del navegador para el sistema de diseno. Eliminan la dependencia de preprocesadores (SASS/Less) y frameworks CSS (Bootstrap/Tailwind), reduciendo el tamano del bundle y manteniendo control total del diseno institucional.</td></tr>
-    <tr><td><strong>Context API</strong></td><td>React nativo</td><td>Gestion de estado global para la sesion del usuario. Solucion nativa de React que evita dependencias adicionales como Redux, simplificando la arquitectura sin sacrificar funcionalidad.</td></tr>
+    <tr><td><strong>Vite</strong></td><td>6.x</td><td>Herramienta de construccion de nueva generacion que ofrece tiempos de compilacion hasta 10x mas r&aacute;pidos que Webpack (Create React App). Hot Module Replacement instantaneo durante el desarrollo.</td></tr>
+    <tr><td><strong>React Router</strong></td><td>v7</td><td>Solucion de enrutamiento estandar para aplicaci&oacute;nes React. Permite navegaci&oacute;n entre p&aacute;ginas sin recarga, con soporte para rutas protegidas (autenticaci&oacute;n), parametros dinamicos y carga diferida.</td></tr>
+    <tr><td><strong>CSS Custom Properties</strong></td><td>Nativo</td><td>Variables CSS nativas del navegador para el sistema de dise&ntilde;o. Eliminan la dependencia de preprocesadores (SASS/Less) y frameworks CSS (Bootstrap/Tailwind), reduciendo el tama&ntilde;o del bundle y manteniendo control total del dise&ntilde;o instituci&oacute;nal.</td></tr>
+    <tr><td><strong>Context API</strong></td><td>React nativo</td><td>Gesti&oacute;n de estado global para la sesion del usuario. Solucion nativa de React que evita dependencias adicionales como Redux, simplificando la arquitectura sin sacrificar funcionalidad.</td></tr>
   </tbody>
 </table>
 
@@ -471,7 +470,7 @@
     <tr>
       <th>Capa</th>
       <th>Componente</th>
-      <th>Descripcion</th>
+      <th>Descripci&oacute;n</th>
     </tr>
   </thead>
   <tbody>
@@ -486,18 +485,18 @@
       <td>Hosting estatico con distribucion global de contenido</td>
     </tr>
     <tr>
-      <td><strong>3. Aplicacion</strong></td>
+      <td><strong>3. Aplicaci&oacute;n</strong></td>
       <td>React SPA</td>
-      <td>Bundle JS + CSS + assets optimizados para produccion</td>
+      <td>Bundle JS + CSS + assets optimizados para producci&oacute;n</td>
     </tr>
     <tr>
       <td rowspan="3"><strong>4. Modulos internos</strong></td>
       <td>React Router</td>
-      <td>Navegacion entre paginas sin recarga</td>
+      <td>Navegaci&oacute;n entre p&aacute;ginas sin recarga</td>
     </tr>
     <tr>
       <td>Context API</td>
-      <td>Gestion de sesion y estado global del usuario</td>
+      <td>Gesti&oacute;n de sesion y estado global del usuario</td>
     </tr>
     <tr>
       <td>localStorage</td>
@@ -506,73 +505,73 @@
     <tr>
       <td><strong>5. Backend (fase futura)</strong></td>
       <td>API REST + Base de datos</td>
-      <td>Autenticacion JWT, pasarela de pagos, integracion Odoo</td>
+      <td>Autenticaci&oacute;n JWT, pasarela de pagos, integraci&oacute;n Odoo</td>
     </tr>
   </tbody>
 </table>
 
 <h3>3.3 Patron de componentes</h3>
 
-<p>La aplicacion sigue un patron de <strong>composicion de componentes</strong> organizado en capas:</p>
+<p>La aplicaci&oacute;n sigue un patron de <strong>composicion de componentes</strong> organizado en capas:</p>
 
 <ul>
-  <li><strong>Componentes de Layout:</strong> Header, Footer, QuickBar, Layout (estructura visual persistente en todas las paginas).</li>
-  <li><strong>Componentes de Pagina:</strong> Cada ruta del sistema tiene un componente de pagina dedicado que orquesta los componentes de seccion.</li>
-  <li><strong>Componentes de Seccion:</strong> Hero, DigitoMes, ServiciosGrid, NoticiasSection, etc. (bloques reutilizables de la interfaz).</li>
+  <li><strong>Componentes de Layout:</strong> Header, Footer, QuickBar, Layout (estructura visual persistente en todas las p&aacute;ginas).</li>
+  <li><strong>Componentes de P&aacute;gina:</strong> Cada ruta del sistema tiene un componente de p&aacute;gina dedicado que orquesta los componentes de secci&oacute;n.</li>
+  <li><strong>Componentes de Secci&oacute;n:</strong> Hero, DigitoMes, ServiciosGrid, NoticiasSection, etc. (bloques reutilizables de la interfaz).</li>
   <li><strong>Componentes de UI:</strong> Modal, Toast, PagoOnlineModal (elementos de interfaz genericos y reutilizables).</li>
-  <li><strong>Componentes de Negocio:</strong> TramiteWizard, StepIndicator, LoginForm, RegisterForm (logica especifica del dominio).</li>
+  <li><strong>Componentes de Negocio:</strong> Tr&aacute;miteWizard, StepIndicator, LoginForm, RegisterForm (logica especifica del dominio).</li>
 </ul>
 
 <!-- ===================== 4. IDENTIDAD VISUAL ===================== -->
-<h2 id="sec4" class="page-break">4. Identidad Visual y Sistema de Diseno</h2>
+<h2 id="sec4" class="page-break">4. Identidad Visual y Sistema de Dise&ntilde;o</h2>
 
 <h3 id="sec4-1">4.1 Paleta de colores</h3>
 
-<p>La seleccion cromatica se fundamenta en tres criterios: <strong>identidad institucional</strong>, <strong>legibilidad</strong> y <strong>cumplimiento de estandares de accesibilidad</strong> (WCAG 2.1 nivel AA, ratio de contraste minimo 4.5:1 para texto).</p>
+<p>La selecci&oacute;n cromatica se fundamenta en tres criterios: <strong>identidad instituci&oacute;nal</strong>, <strong>legibilidad</strong> y <strong>cumplimiento de est&aacute;ndares de accesibilidad</strong> (WCAG 2.1 nivel AA, ratio de contraste m&iacute;nimo 4.5:1 para texto).</p>
 
 <table>
   <thead>
-    <tr><th>Color</th><th>Uso y justificacion</th></tr>
+    <tr><th>Color</th><th>Uso y justificaci&oacute;n</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Azul Primario</strong></td><td>Color institucional principal. Azul marino que transmite autoridad, confianza y seriedad gubernamental. Utilizado en header, titulos, botones primarios y footer.</td></tr>
-    <tr><td><strong>Azul Medio</strong></td><td>Variante intermedia para gradientes y elementos secundarios de navegacion.</td></tr>
+    <tr><td><strong>Azul Primario</strong></td><td>Color instituci&oacute;nal principal. Azul marino que transmite autoridad, confianza y seriedad gubernamental. Utilizado en header, titulos, botones primarios y footer.</td></tr>
+    <tr><td><strong>Azul Medio</strong></td><td>Variante intermedia para gradientes y elementos secundarios de navegaci&oacute;n.</td></tr>
     <tr><td><strong>Azul Acento</strong></td><td>Azul de acento para enlaces, iconos interactivos y elementos de llamado a la accion.</td></tr>
-    <tr><td><strong>Verde</strong></td><td>Indicador de estados positivos: tramites completados, pagos exitosos, disponibilidad de servicios.</td></tr>
-    <tr><td><strong>Rojo</strong></td><td>Alertas, errores de validacion y estados de rechazo. Uso restringido para maximizar su impacto comunicativo.</td></tr>
+    <tr><td><strong>Verde</strong></td><td>Indicador de estados positivos: tr&aacute;mites completados, pagos exitosos, disponibilidad de servicios.</td></tr>
+    <tr><td><strong>Rojo</strong></td><td>Alertas, errores de validaci&oacute;n y estados de rechazo. Uso restringido para maximizar su impacto comunicativo.</td></tr>
     <tr><td><strong>Amarillo</strong></td><td>Avisos y estados intermedios (en proceso, pendiente). Aporta calidez sin connotacion negativa.</td></tr>
-    <tr><td><strong>Gris Claro</strong></td><td>Fondos alternos de secciones. Proporciona separacion visual sin fatigar la lectura.</td></tr>
+    <tr><td><strong>Gris Claro</strong></td><td>Fondos alternos de secci&oacute;nes. Proporciona separacion visual sin fatigar la lectura.</td></tr>
   </tbody>
 </table>
 
-<p>La eleccion del <strong>azul marino (#003876)</strong> como color primario responde a lineamientos de comunicacion gubernamental ecuatoriana, donde los tonos azules son predominantes en entidades de seguridad y transporte. Este color se alinea con la identidad de la Agencia Nacional de Transito (ANT) y mantiene coherencia con el ecosistema visual del sector publico.</p>
+<p>La eleccion del <strong>azul marino (#003876)</strong> como color primario responde a l&iacute;neamientos de comunicaci&oacute;n gubernamental ecuatoriana, donde los tonos azules son predominantes en entidades de seguridad y transporte. Este color se al&iacute;nea con la identidad de la Agencia Nacional de Tr&aacute;nsito (ANT) y mantiene coherencia con el ecosistema visual del sector p&uacute;blico.</p>
 
-<h3 id="sec4-2">4.2 Tipografia</h3>
+<h3 id="sec4-2">4.2 Tipograf&iacute;a</h3>
 
-<p>Se utiliza <strong>Inter</strong> como tipografia principal, una familia sans-serif de codigo abierto disenada especificamente para interfaces digitales. Sus caracteristicas:</p>
+<p>Se utiliza <strong>Inter</strong> como tipograf&iacute;a principal, una familia sans-serif de c&oacute;digo abierto dise&ntilde;ada especificamente para interfaces digitales. Sus caracter&iacute;sticas:</p>
 
 <ul>
-  <li>Optimizada para pantallas de baja y alta resolucion (diseño a-b-c-d pixel-perfect).</li>
+  <li>Optimizada para pantallas de baja y alta resoluci&oacute;n (diseño a-b-c-d pixel-perfect).</li>
   <li>Amplio rango de pesos (300 a 800) que permite establecer jerarquias visuales claras.</li>
-  <li>Excelente legibilidad en tamanos pequenos, critico para tablas de datos y formularios.</li>
+  <li>Excelente legibilidad en tama&ntilde;os pequenos, critico para tablas de datos y formularios.</li>
   <li>Licencia SIL Open Font License: gratuita para uso gubernamental sin restricciones.</li>
   <li>Soporte completo de caracteres latinos, incluyendo acentos y la ene (n).</li>
 </ul>
 
 <h3 id="sec4-3">4.3 Componentes UI</h3>
 
-<p>El sistema de diseno incluye un kit de componentes estandarizado que garantiza consistencia visual en toda la plataforma:</p>
+<p>El sistema de dise&ntilde;o incluye un kit de componentes estandarizado que garantiza consistencia visual en toda la plataforma:</p>
 
 <ul>
   <li><strong>Botones:</strong> tres variantes (primario, outline, secundario) con estados hover, focus y disabled.</li>
   <li><strong>Tarjetas:</strong> contenedores con sombra y bordes redondeados (radius: 10px) para servicios, noticias y oficinas.</li>
-  <li><strong>Formularios:</strong> inputs, selects, textareas y file uploads con validacion visual y mensajes de error.</li>
-  <li><strong>Badges:</strong> indicadores de estado con codigo de color (verde=completado, amarillo=en proceso, rojo=rechazado).</li>
-  <li><strong>Modales:</strong> componente generico reutilizable para confirmaciones, pagos y alertas.</li>
+  <li><strong>Formularios:</strong> inputs, selects, textareas y file uploads con validaci&oacute;n visual y mensajes de error.</li>
+  <li><strong>Badges:</strong> indicadores de estado con c&oacute;digo de color (verde=completado, amarillo=en proceso, rojo=rechazado).</li>
+  <li><strong>Modales:</strong> componente generico reutilizable para confirmaci&oacute;nes, pagos y alertas.</li>
   <li><strong>Toasts:</strong> notificaciones temporales no intrusivas para acciones exitosas o errores.</li>
 </ul>
 
-<h3 id="sec4-4">4.4 Diseno responsive</h3>
+<h3 id="sec4-4">4.4 Dise&ntilde;o responsive</h3>
 
 <p>El portal implementa un enfoque <strong>mobile-first</strong> con tres puntos de quiebre (breakpoints):</p>
 
@@ -581,19 +580,19 @@
     <tr><th>Breakpoint</th><th>Rango</th><th>Dispositivo</th><th>Adaptaciones</th></tr>
   </thead>
   <tbody>
-    <tr><td>Movil</td><td>&lt; 480px</td><td>Smartphones</td><td>Menu hamburguesa, columna unica, botones full-width, tipografia reducida</td></tr>
-    <tr><td>Tablet</td><td>481 - 1024px</td><td>Tablets, laptops pequenos</td><td>Grid de 2 columnas, navegacion condensada</td></tr>
-    <tr><td>Escritorio</td><td>&gt; 1024px</td><td>Monitores, laptops</td><td>Grid completo, sidebar visible, navegacion expandida</td></tr>
+    <tr><td>M&oacute;vil</td><td>&lt; 480px</td><td>Smartphones</td><td>Menu hamburguesa, columna unica, botones full-width, tipograf&iacute;a reducida</td></tr>
+    <tr><td>Tablet</td><td>481 - 1024px</td><td>Tablets, laptops pequenos</td><td>Grid de 2 columnas, navegaci&oacute;n condensada</td></tr>
+    <tr><td>Escritorio</td><td>&gt; 1024px</td><td>Monitores, laptops</td><td>Grid completo, sidebar visible, navegaci&oacute;n expandida</td></tr>
   </tbody>
 </table>
 
 <table>
   <tr>
-    <td style="width:50%; text-align:center; vertical-align:top;"><img src="screenshots/19-mobile-homepage.png" class="screenshot" alt="Vista movil homepage" style="width:80%;"></td>
-    <td style="width:50%; text-align:center; vertical-align:top;"><img src="screenshots/20-mobile-servicios.png" class="screenshot" alt="Vista movil servicios" style="width:80%;"></td>
+    <td style="width:50%; text-align:center; vertical-align:top;"><img src="/propuesta/screenshots/19-mobile-homepage.png" class="screenshot" alt="Vista m&oacute;vil homepage" style="width:80%;"></td>
+    <td style="width:50%; text-align:center; vertical-align:top;"><img src="/propuesta/screenshots/20-mobile-servicios.png" class="screenshot" alt="Vista m&oacute;vil servicios" style="width:80%;"></td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align:center; font-style:italic; font-size:9pt; color:#6B7280;">Figuras 1-2: Vistas responsive en dispositivo movil (375px) &mdash; Pagina principal y catalogo de servicios.</td>
+    <td colspan="2" style="text-align:center; font-style:italic; font-size:9pt; color:#6B7280;">Figuras 1-2: Vistas responsive en dispositivo m&oacute;vil (375px) &mdash; P&aacute;gina principal y catalogo de servicios.</td>
   </tr>
 </table>
 
@@ -603,7 +602,7 @@
 
 <ul>
   <li><strong>Skip to content:</strong> enlace oculto que permite a usuarios de lectores de pantalla saltar directamente al contenido principal.</li>
-  <li><strong>Contraste cromatico:</strong> todos los textos mantienen un ratio de contraste minimo de 4.5:1 contra su fondo.</li>
+  <li><strong>Contraste cromatico:</strong> todos los textos mantienen un ratio de contraste m&iacute;nimo de 4.5:1 contra su fondo.</li>
   <li><strong>Focus visible:</strong> todos los elementos interactivos muestran un indicador visual claro al recibir foco por teclado.</li>
   <li><strong>Etiquetas ARIA:</strong> formularios con labels asociados, roles semanticos y atributos aria-label donde corresponde.</li>
   <li><strong>Movimiento reducido:</strong> soporte para <code>prefers-reduced-motion</code>, desactivando animaciones para usuarios sensibles.</li>
@@ -614,167 +613,167 @@
 <!-- ===================== 5. ESTRUCTURA DEL PORTAL ===================== -->
 <h2 id="sec5" class="page-break">5. Estructura del Portal</h2>
 
-<p>El portal se estructura en secciones claramente diferenciadas, cada una con un proposito comunicativo y funcional especifico. A continuacion se detalla cada seccion con su captura de pantalla correspondiente.</p>
+<p>El portal se estructura en secci&oacute;nes claramente diferenciadas, cada una con un proposito comunicativo y funcional espec&iacute;fico. A continuacion se detalla cada secci&oacute;n con su captura de pantalla correspondiente.</p>
 
-<h3 id="sec5-1">5.1 Pagina Principal (Home)</h3>
+<h3 id="sec5-1">5.1 P&aacute;gina Principal (Home)</h3>
 
-<p>La pagina principal es el punto de entrada del portal y condensa la informacion mas relevante para el ciudadano. Esta compuesta por las siguientes secciones:</p>
+<p>La p&aacute;gina principal es el punto de entrada del portal y condensa la informaci&oacute;n mas relevante para el ciudadano. Esta compuesta por las siguientes secci&oacute;nes:</p>
 
 <div class="figure">
-  <img src="screenshots/01-homepage-hero.png" class="screenshot" alt="Homepage hero section">
-  <figcaption>Figura 3: Seccion hero de la pagina principal con buscador inteligente, barra de accesos rapidos y digito del mes.</figcaption>
+  <img src="/propuesta/screenshots/01-homepage-hero.png" class="screenshot" alt="Homepage hero section">
+  <figcaption>Figura 3: Secci&oacute;n hero de la p&aacute;gina principal con buscador inteligente, barra de accesos r&aacute;pidos y digito del mes.</figcaption>
 </div>
 
 <h4>Barra de Gobierno del Ecuador</h4>
-<p>Franja superior oscura con el texto "Sitio oficial de la Republica del Ecuador" y enlace a gob.ec. Es un requisito normativo para todos los sitios web de entidades publicas ecuatorianas, establecido por la Secretaria Nacional de la Administracion Publica.</p>
+<p>Franja superior oscura con el texto "Sitio oficial de la Rep&uacute;blica del Ecuador" y enlace a gob.ec. Es un requisito normativo para todos los sitios web de entidades p&uacute;blicas ecuatorianas, establecido por la Secretaria Nacional de la Administraci&oacute;n Publica.</p>
 
-<h4>Header con navegacion principal</h4>
-<p>Barra sticky (se mantiene visible al hacer scroll) con el logo institucional, siete secciones de navegacion (Inicio, Institucion, Servicios, Tramites, Noticias, Transparencia, Contacto) y acceso a la cuenta del usuario. En dispositivos moviles, colapsa a un menu hamburguesa.</p>
+<h4>Header con navegaci&oacute;n principal</h4>
+<p>Barra sticky (se mantiene visible al hacer scroll) con el logo instituci&oacute;nal, siete secci&oacute;nes de navegaci&oacute;n (Inicio, Instituci&oacute;n, Servicios, Tr&aacute;mites, Noticias, Transparencia, Contacto) y acceso a la cuenta del usuario. En dispositivos m&oacute;viles, colapsa a un menu hamburguesa.</p>
 
-<h4>QuickBar &mdash; Barra de accesos rapidos</h4>
-<p>Cinco accesos directos a las funciones mas solicitadas: Agendar cita, Consultar requisitos, Consultar multas, Llamar ahora y Seguimiento de tramites. Permite al ciudadano acceder a lo que necesita sin navegar multiples menus.</p>
+<h4>QuickBar &mdash; Barra de accesos r&aacute;pidos</h4>
+<p>Cinco accesos directos a las funciones mas solicitadas: Agendar cita, Consultar requisitos, Consultar multas, Llamar ahora y Seguimiento de tr&aacute;mites. Permite al ciudada&ntilde;o acceder a lo que necesita sin navegar multiples menus.</p>
 
 <h4>Hero con buscador</h4>
-<p>Seccion principal con gradiente azul, titulo descriptivo, botones de accion (Ver tramites, Ubicar oficinas) y un <strong>buscador inteligente</strong> con sugerencias de busqueda (Matriculacion, Revision vehicular, Multas, Certificados RTV, Titulos habilitantes). El buscador filtra en tiempo real entre los 13 tramites disponibles.</p>
+<p>Secci&oacute;n principal con gradiente azul, titulo descriptivo, botones de accion (Ver tr&aacute;mites, Ubicar oficinas) y un <strong>buscador inteligente</strong> con sugerencias de b&uacute;squeda (Matr&iacute;culaci&oacute;n, Revisi&oacute;n vehicular, Multas, Certificados RTV, Titulos habilitantes). El buscador filtra en tiempo real entre los 13 tr&aacute;mites disponibles.</p>
 
 <h4>Digito del mes</h4>
-<p>Banner informativo que indica que digito de placa corresponde a la revision tecnica vehicular en el mes actual. Incluye un calendario anual con los 12 meses y sus digitos asignados, informacion critica que el ciudadano consulta frecuentemente.</p>
+<p>Banner informativo que indica que digito de placa corresponde a la revisi&oacute;n t&eacute;cnica vehicular en el mes actual. Incluye un calendario anual con los 12 meses y sus d&iacute;gitos asignados, informaci&oacute;n cr&iacute;tica que el ciudada&ntilde;o consulta frecuentemente.</p>
 
 <div class="figure">
-  <img src="screenshots/02-homepage-full.png" class="screenshot" alt="Homepage completa">
-  <figcaption>Figura 4: Vista completa de la pagina principal con todas sus secciones: servicios, quienes somos, oficinas, noticias, transparencia y contacto.</figcaption>
+  <img src="/propuesta/screenshots/02-homepage-full.png" class="screenshot" alt="Homepage completa">
+  <figcaption>Figura 4: Vista completa de la p&aacute;gina principal con todas sus secci&oacute;nes: servicios, quienes somos, oficinas, noticias, transparencia y contacto.</figcaption>
 </div>
 
 <h4>Grid de Servicios Ciudadanos</h4>
-<p>Seis tarjetas que representan las areas principales de servicio: Matriculacion Vehicular, Revision Tecnica, Licencias de Conducir, Multas e Infracciones, Senaletica Vial y Seguridad Vial. Cada tarjeta incluye un icono representativo en azul institucional, titulo y descripcion breve.</p>
+<p>Seis tarjetas que representan las areas principales de servicio: Matr&iacute;culaci&oacute;n Vehicular, Revisi&oacute;n T&eacute;cnica, Licencias de Conducir, Multas e Infracciones, Se&ntilde;al&eacute;tica Vial y Seguridad Vial. Cada tarjeta incluye un icono representativo en azul instituci&oacute;nal, titulo y descripci&oacute;n breve.</p>
 
 <h4>Quienes Somos</h4>
-<p>Seccion institucional con imagen representativa y texto descriptivo de la mision de ATM Centro Guayas, acompanado de la lista de los siete cantones que conforman la mancomunidad.</p>
+<p>Secci&oacute;n instituci&oacute;nal con imagen representativa y texto descriptivo de la mision de ATM Centro Guayas, acompa&ntilde;ado de la lista de los siete cantones que conforman la mancomunidad.</p>
 
 <h4>Nuestras Oficinas</h4>
-<p>Tres tarjetas con las oficinas de atencion (Nobol, Pedro Carbo, Santa Lucia), cada una con imagen, direccion y horario de atencion. Permite al ciudadano ubicar la oficina mas cercana.</p>
+<p>Tres tarjetas con las oficinas de atenci&oacute;n (Nobol, Pedro Carbo, Santa Lucia), cada una con imagen, direccion y horario de atenci&oacute;n. Permite al ciudada&ntilde;o ubicar la oficina mas cercana.</p>
 
 <h4>Noticias Recientes</h4>
-<p>Las tres noticias mas recientes en formato de tarjeta con imagen, fecha, titulo y extracto. Enlaza a la pagina de detalle de cada noticia.</p>
+<p>Las tres noticias mas recientes en formato de tarjeta con imagen, fecha, titulo y extracto. Enlaza a la p&aacute;gina de detalle de cada noticia.</p>
 
 <h4>Transparencia</h4>
-<p>Cuatro accesos directos a la informacion de transparencia requerida por la LOTAIP: Organigrama, Presupuesto, Contratacion publica y Rendicion de cuentas.</p>
+<p>Cuatro accesos directos a la informaci&oacute;n de transparencia requerida por la LOTAIP: Organigrama, Presupuesto, Contrataci&oacute;n p&uacute;blica y Rendici&oacute;n de cuentas.</p>
 
 <h4>Contacto y Mapa</h4>
-<p>Informacion de contacto (telefono, email, direccion, horario) con mapa embebido de Google Maps que muestra la ubicacion de la oficina principal en Nobol, incluyendo un boton "Como llegar" que abre Google Maps con indicaciones de ruta.</p>
+<p>Informaci&oacute;n de contacto (telefono, email, direccion, horario) con mapa embebido de Google Maps que muestra la ubicacion de la oficina principal en Nobol, incluyendo un boton "Como llegar" que abre Google Maps con indicaciones de ruta.</p>
 
 <h4>Footer</h4>
-<p>Pie de pagina en fondo oscuro con cinco columnas: marca institucional, enlaces de la institucion, enlaces de servicios, accesos rapidos y redes sociales (Facebook, Twitter, Instagram). Incluye aviso de copyright.</p>
+<p>Pie de p&aacute;gina en fondo oscuro con cinco columnas: marca instituci&oacute;nal, enlaces de la instituci&oacute;n, enlaces de servicios, accesos r&aacute;pidos y redes sociales (Facebook, Twitter, Instagram). Incluye aviso de copyright.</p>
 
-<!-- 5.2 Institucion -->
-<h3 id="sec5-2" class="page-break">5.2 Institucion</h3>
+<!-- 5.2 Instituci&oacute;n -->
+<h3 id="sec5-2" class="page-break">5.2 Instituci&oacute;n</h3>
 
-<p>Pagina dedicada a la identidad institucional de ATM Centro Guayas. Presenta la informacion corporativa en un formato estructurado y profesional que refuerza la imagen de seriedad y compromiso de la entidad.</p>
+<p>P&aacute;gina dedicada a la identidad instituci&oacute;nal de ATM Centro Guayas. Presenta la informaci&oacute;n corporativa en un formato estructurado y profesional que refuerza la imagen de seriedad y compromiso de la entidad.</p>
 
 <div class="figure">
-  <img src="screenshots/03-institucion.png" class="screenshot" alt="Pagina Institucion">
-  <figcaption>Figura 5: Pagina "Institucion" con mision, vision, valores y cantones de jurisdiccion.</figcaption>
+  <img src="/propuesta/screenshots/03-institucion.png" class="screenshot" alt="P&aacute;gina Instituci&oacute;n">
+  <figcaption>Figura 5: P&aacute;gina "Instituci&oacute;n" con mision, vision, valores y cantones de jurisdiccion.</figcaption>
 </div>
 
-<p>Secciones incluidas:</p>
+<p>Secci&oacute;nes incluidas:</p>
 <ul>
-  <li><strong>Quienes somos:</strong> Descripcion detallada de la entidad, su creacion y marco legal.</li>
+  <li><strong>Quienes somos:</strong> Descripci&oacute;n detallada de la entidad, su creacion y marco legal.</li>
   <li><strong>Mision y Vision:</strong> Presentadas en tarjetas paralelas con iconografia distintiva.</li>
-  <li><strong>Valores institucionales:</strong> Seis valores en formato de grid (Transparencia, Eficiencia, Servicio, Integridad, Innovacion, Responsabilidad).</li>
+  <li><strong>Valores instituci&oacute;nales:</strong> Seis valores en formato de grid (Transparencia, Eficiencia, Servicio, Integridad, Innovacion, Responsabilidad).</li>
   <li><strong>Cantones de jurisdiccion:</strong> Grid con los siete cantones, con escudo y nombre de cada uno.</li>
 </ul>
 
 <!-- 5.3 Servicios -->
 <h3 id="sec5-3">5.3 Catalogo de Servicios</h3>
 
-<p>Pagina que presenta los <strong>13 tramites vehiculares</strong> disponibles con capacidad de busqueda en tiempo real y filtrado por categoria. Es el punto de entrada principal para que el ciudadano identifique el tramite que necesita y conozca sus requisitos.</p>
+<p>P&aacute;gina que presenta los <strong>13 tr&aacute;mites vehiculares</strong> disponibles con capacidad de b&uacute;squeda en tiempo real y filtrado por categor&iacute;a. Es el punto de entrada principal para que el ciudada&ntilde;o identifique el tr&aacute;mite que necesita y conozca sus requisitos.</p>
 
 <div class="figure">
-  <img src="screenshots/04-servicios-catalogo.png" class="screenshot" alt="Catalogo de servicios">
-  <figcaption>Figura 6: Catalogo de servicios con buscador y filtros por categoria (Todos, Matriculacion, Documentos, Actualizacion).</figcaption>
+  <img src="/propuesta/screenshots/04-servicios-catalogo.png" class="screenshot" alt="Catalogo de servicios">
+  <figcaption>Figura 6: Catalogo de servicios con buscador y filtros por categor&iacute;a (Todos, Matr&iacute;culaci&oacute;n, Documentos, Actualizaci&oacute;n).</figcaption>
 </div>
 
-<p>Cada tarjeta de servicio muestra: icono, nombre, descripcion, modalidad (online/presencial), costo aproximado y tiempo estimado de procesamiento. Los servicios disponibles en linea se destacan con un badge verde "Online" y un boton directo para iniciar el tramite.</p>
+<p>Cada tarjeta de servicio muestra: icono, nombre, descripci&oacute;n, modalidad (online/presencial), costo aproximado y tiempo estimado de procesamiento. Los servicios disponibles en l&iacute;nea se destacan con un badge verde "Online" y un boton directo para iniciar el tr&aacute;mite.</p>
 
 <div class="figure">
-  <img src="screenshots/05-servicio-detalle.png" class="screenshot" alt="Detalle de servicio">
-  <figcaption>Figura 7: Pagina de detalle del tramite "Matriculacion Primera Vez" con lista de requisitos, costo, tiempo y boton para iniciar el tramite en linea.</figcaption>
+  <img src="/propuesta/screenshots/05-servicio-detalle.png" class="screenshot" alt="Detalle de servicio">
+  <figcaption>Figura 7: P&aacute;gina de detalle del tr&aacute;mite "Matr&iacute;culaci&oacute;n Primera Vez" con lista de requisitos, costo, tiempo y boton para iniciar el tr&aacute;mite en l&iacute;nea.</figcaption>
 </div>
 
-<p>La pagina de detalle de cada servicio proporciona informacion completa: descripcion ampliada, lista de requisitos documentales, costo aproximado, tiempo estimado y la opcion de iniciar el tramite en linea (para los que disponen de esta modalidad) o indicaciones para el tramite presencial.</p>
+<p>La p&aacute;gina de detalle de cada servicio proporciona informaci&oacute;n completa: descripci&oacute;n ampliada, lista de requisitos documentales, costo aproximado, tiempo estimado y la opci&oacute;n de iniciar el tr&aacute;mite en l&iacute;nea (para los que disponen de esta modalidad) o indicaciones para el tr&aacute;mite presencial.</p>
 
 <!-- 5.4 Noticias -->
 <h3 id="sec5-4" class="page-break">5.4 Noticias</h3>
 
-<p>Seccion de comunicacion institucional que permite mantener informada a la ciudadania sobre las actividades, campanas y comunicados oficiales de ATM Centro Guayas.</p>
+<p>Secci&oacute;n de comunicaci&oacute;n instituci&oacute;nal que permite mantener informada a la ciudadan&iacute;a sobre las actividades, campanas y comunicados oficiales de ATM Centro Guayas.</p>
 
 <div class="figure">
-  <img src="screenshots/06-noticias-listado.png" class="screenshot" alt="Listado de noticias">
-  <figcaption>Figura 8: Pagina de noticias con tarjetas que incluyen imagen, fecha, categoria, titulo y extracto.</figcaption>
+  <img src="/propuesta/screenshots/06-noticias-listado.png" class="screenshot" alt="Listado de noticias">
+  <figcaption>Figura 8: P&aacute;gina de noticias con tarjetas que incluyen imagen, fecha, categor&iacute;a, titulo y extracto.</figcaption>
 </div>
 
-<p>Cada noticia se presenta en formato de tarjeta con imagen destacada, fecha de publicacion, categoria (Comunicado, Institucional, Servicios, Seguridad Vial), titulo y resumen. Al hacer clic, se accede a la pagina de detalle.</p>
+<p>Cada noticia se presenta en formato de tarjeta con imagen destacada, fecha de p&uacute;blicacion, categor&iacute;a (Comunicado, Instituci&oacute;nal, Servicios, Seguridad Vial), titulo y resumen. Al hacer clic, se accede a la p&aacute;gina de detalle.</p>
 
 <div class="figure">
-  <img src="screenshots/07-noticia-detalle.png" class="screenshot" alt="Detalle de noticia">
-  <figcaption>Figura 9: Pagina de detalle de noticia con contenido completo, imagen, botones para compartir en redes sociales y sidebar con noticias relacionadas.</figcaption>
+  <img src="/propuesta/screenshots/07-noticia-detalle.png" class="screenshot" alt="Detalle de noticia">
+  <figcaption>Figura 9: P&aacute;gina de detalle de noticia con contenido completo, imagen, botones para compartir en redes sociales y sidebar con noticias relacionadas.</figcaption>
 </div>
 
-<p>La pagina de detalle utiliza un layout de dos columnas: el articulo principal con imagen, contenido formateado (parrafos y listas) y botones de compartir en redes sociales (Facebook, Twitter); y una barra lateral con tres noticias relacionadas para fomentar la navegacion continua.</p>
+<p>La p&aacute;gina de detalle utiliza un layout de dos columnas: el articulo principal con imagen, contenido formateado (parrafos y listas) y botones de compartir en redes sociales (Facebook, Twitter); y una barra lateral con tres noticias relacionadas para fomentar la navegaci&oacute;n continua.</p>
 
 <!-- 5.5 Transparencia -->
 <h3 id="sec5-5">5.5 Transparencia (LOTAIP)</h3>
 
-<p>Seccion dedicada al cumplimiento de la <strong>Ley Organica de Transparencia y Acceso a la Informacion Publica (LOTAIP)</strong>, obligatoria para todas las entidades del sector publico ecuatoriano.</p>
+<p>Secci&oacute;n dedicada al cumplimiento de la <strong>Ley Org&aacute;nica de Transparencia y Acceso a la Informaci&oacute;n Publica (LOTAIP)</strong>, obligatoria para todas las entidades del sector p&uacute;blico ecuatoriano.</p>
 
 <div class="figure">
-  <img src="screenshots/08-transparencia.png" class="screenshot" alt="Pagina de transparencia">
-  <figcaption>Figura 10: Pagina de transparencia con cuatro categorias de informacion publica requeridas por la LOTAIP.</figcaption>
+  <img src="/propuesta/screenshots/08-transparencia.png" class="screenshot" alt="P&aacute;gina de transparencia">
+  <figcaption>Figura 10: P&aacute;gina de transparencia con cuatro categor&iacute;as de informaci&oacute;n p&uacute;blica requeridas por la LOTAIP.</figcaption>
 </div>
 
-<p>Se organiza en cuatro categorias principales:</p>
+<p>Se organiza en cuatro categor&iacute;as principales:</p>
 <ul>
-  <li><strong>Rendicion de Cuentas:</strong> Informes anuales de gestion, indicadores de desempeno.</li>
-  <li><strong>Presupuesto Institucional:</strong> Ejecucion presupuestaria, estados financieros, nomina de personal.</li>
-  <li><strong>Contratacion Publica:</strong> Procesos de adquisicion, contratos vigentes, proveedores.</li>
-  <li><strong>LOTAIP - Informacion Publica:</strong> Art. 7 con los literales a-o de informacion obligatoria.</li>
+  <li><strong>Rendici&oacute;n de Cuentas:</strong> Informes anuales de gesti&oacute;n, indicadores de desempeno.</li>
+  <li><strong>Presupuesto Instituci&oacute;nal:</strong> Ejecuci&oacute;n presupuestaria, estados financieros, nomina de personal.</li>
+  <li><strong>Contrataci&oacute;n Publica:</strong> Procesos de adquisicion, contratos vigentes, proveedores.</li>
+  <li><strong>LOTAIP - Informaci&oacute;n Publica:</strong> Art. 7 con los literales a-o de informaci&oacute;n obligatoria.</li>
 </ul>
 
 <!-- 5.6 Contacto -->
 <h3 id="sec5-6">5.6 Contacto</h3>
 
 <div class="figure">
-  <img src="screenshots/09-contacto.png" class="screenshot" alt="Pagina de contacto">
-  <figcaption>Figura 11: Pagina de contacto con informacion de las tres oficinas, formulario de contacto y mapa interactivo.</figcaption>
+  <img src="/propuesta/screenshots/09-contacto.png" class="screenshot" alt="P&aacute;gina de contacto">
+  <figcaption>Figura 11: P&aacute;gina de contacto con informaci&oacute;n de las tres oficinas, formulario de contacto y mapa interactivo.</figcaption>
 </div>
 
-<p>La pagina de contacto proporciona multiples canales de comunicacion:</p>
+<p>La p&aacute;gina de contacto proporciona multiples canales de comunicaci&oacute;n:</p>
 <ul>
-  <li>Telefono institucional con enlace directo para llamar desde movil.</li>
-  <li>Correo electronico institucional.</li>
-  <li>Direcciones de las tres oficinas con horarios de atencion.</li>
-  <li>Formulario de contacto (nombre, email, asunto, mensaje) con validacion y confirmacion de envio.</li>
+  <li>Telefono instituci&oacute;nal con enlace directo para llamar desde m&oacute;vil.</li>
+  <li>Correo electr&oacute;nico instituci&oacute;nal.</li>
+  <li>Direcciones de las tres oficinas con horarios de atenci&oacute;n.</li>
+  <li>Formulario de contacto (nombre, email, asunto, mensaje) con validaci&oacute;n y confirmaci&oacute;n de envio.</li>
   <li>Mapa interactivo de Google Maps con la ubicacion de la oficina principal y boton "Como llegar".</li>
 </ul>
 
 <!-- ===================== 6. AUTENTICACION ===================== -->
-<h2 id="sec6" class="page-break">6. Sistema de Autenticacion y Registro</h2>
+<h2 id="sec6" class="page-break">6. Sistema de Autenticaci&oacute;n y Registro</h2>
 
-<p>Para acceder a los servicios transaccionales (tramites en linea, consulta de multas, dashboard personal), el ciudadano debe crear una cuenta en el portal. El sistema de autenticacion ha sido disenado priorizando la <strong>simplicidad</strong>, la <strong>seguridad</strong> y el <strong>cumplimiento de la normativa ecuatoriana de proteccion de datos</strong>.</p>
+<p>Para acceder a los servicios transacci&oacute;nales (tr&aacute;mites en l&iacute;nea, consulta de multas, dashboard personal), el ciudada&ntilde;o debe crear una cuenta en el portal. El sistema de autenticaci&oacute;n ha sido dise&ntilde;ado priorizando la <strong>simplicidad</strong>, la <strong>seguridad</strong> y el <strong>cumplimiento de la normativa ecuatoriana de protecci&oacute;n de datos</strong>.</p>
 
 <h3>6.1 Flujo de registro</h3>
 
 <p>El proceso de registro se organiza en <strong>tres pasos</strong> para reducir la percepcion de complejidad y guiar al usuario de forma progresiva:</p>
 
 <div class="figure">
-  <img src="screenshots/11-registro-paso1.png" class="screenshot" alt="Formulario de registro">
+  <img src="/propuesta/screenshots/11-registro-paso1.png" class="screenshot" alt="Formulario de registro">
   <figcaption>Figura 12: Formulario de registro con indicador de pasos y campos del Paso 1 (datos personales).</figcaption>
 </div>
 
 <ol>
-  <li><strong>Datos Personales:</strong> Cedula de identidad (10 digitos, con validacion de formato), nombres completos y fecha de nacimiento.</li>
-  <li><strong>Datos de Contacto:</strong> Correo electronico, numero de telefono, canton de residencia (selector con los 7 cantones) y direccion domiciliaria.</li>
-  <li><strong>Seguridad:</strong> Creacion de contrasena (minimo 8 caracteres), confirmacion de contrasena y aceptacion de terminos y condiciones de uso.</li>
+  <li><strong>Datos Personales:</strong> C&eacute;dula de identidad (10 d&iacute;gitos, con validaci&oacute;n de formato), nombres completos y fecha de nacimiento.</li>
+  <li><strong>Datos de Contacto:</strong> Correo electr&oacute;nico, n&uacute;mero de telefono, canton de residencia (selector con los 7 cantones) y direccion domiciliaria.</li>
+  <li><strong>Seguridad:</strong> Creacion de contrase&ntilde;a (m&iacute;nimo 8 caracteres), confirmaci&oacute;n de contrase&ntilde;a y aceptacion de terminos y condiciones de uso.</li>
 </ol>
 
 <p>Al completar el registro, el usuario es autenticado automaticamente y redirigido a su dashboard personal.</p>
@@ -782,31 +781,31 @@
 <h3>6.2 Flujo de inicio de sesion</h3>
 
 <div class="figure">
-  <img src="screenshots/10-login.png" class="screenshot" alt="Pagina de login">
-  <figcaption>Figura 13: Pantalla de inicio de sesion con opciones de cedula o correo electronico.</figcaption>
+  <img src="/propuesta/screenshots/10-login.png" class="screenshot" alt="P&aacute;gina de login">
+  <figcaption>Figura 13: Pantalla de inicio de sesion con opci&oacute;nes de c&eacute;dula o correo electr&oacute;nico.</figcaption>
 </div>
 
-<p>El login permite autenticarse mediante <strong>cedula de identidad o correo electronico</strong>, junto con la contrasena. Incluye opcion de mostrar/ocultar contrasena y enlace al formulario de registro para usuarios nuevos. Tras un inicio de sesion exitoso, el usuario es redirigido a la pagina que intentaba acceder (o al dashboard si accedio directamente al login).</p>
+<p>El login permite autenticarse mediante <strong>c&eacute;dula de identidad o correo electr&oacute;nico</strong>, junto con la contrase&ntilde;a. Incluye opci&oacute;n de mostrar/ocultar contrase&ntilde;a y enlace al formulario de registro para usuarios nuevos. Tras un inicio de sesion exitoso, el usuario es redirigido a la p&aacute;gina que intentaba acceder (o al dashboard si accedio directamente al login).</p>
 
 <h3>6.3 Rutas protegidas</h3>
 
-<p>Las siguientes secciones del portal requieren autenticacion previa:</p>
+<p>Las siguientes secci&oacute;nes del portal requieren autenticaci&oacute;n previa:</p>
 <ul>
   <li><strong>/dashboard</strong> &mdash; Panel de control del ciudadano</li>
-  <li><strong>/tramite/:slug</strong> &mdash; Wizard de tramite en linea</li>
-  <li><strong>/consulta-multas</strong> &mdash; Consulta de multas e infracciones</li>
+  <li><strong>/tr&aacute;mite/:slug</strong> &mdash; Wizard de tr&aacute;mite en l&iacute;nea</li>
+  <li><strong>/consulta-multas</strong> &mdash; Consulta de multas e infracci&oacute;nes</li>
 </ul>
 
-<p>El componente <code>ProtectedRoute</code> verifica la sesion activa y, en caso de no existir, redirige al login preservando la URL de destino para retomar la navegacion tras autenticarse.</p>
+<p>El componente <code>ProtectedRoute</code> verifica la sesion activa y, en caso de no existir, redirige al login preservando la URL de destino para retomar la navegaci&oacute;n tras autenticarse.</p>
 
 <!-- ===================== 7. DASHBOARD ===================== -->
 <h2 id="sec7" class="page-break">7. Dashboard del Ciudadano</h2>
 
-<p>El dashboard es el panel de control personalizado de cada usuario registrado. Centraliza toda la informacion relevante de sus interacciones con la institucion en una interfaz clara y orientada a la accion.</p>
+<p>El dashboard es el panel de control personalizado de cada usuario registrado. Centraliza toda la informaci&oacute;n relevante de sus interacciones con la instituci&oacute;n en una interfaz clara y orientada a la accion.</p>
 
 <div class="figure">
-  <img src="screenshots/21-dashboard-citas.png" class="screenshot" alt="Dashboard del ciudadano">
-  <figcaption>Figura 14: Dashboard del ciudadano con estadisticas, citas programadas, tramites disponibles e historial de solicitudes.</figcaption>
+  <img src="/propuesta/screenshots/21-dashboard-citas.png" class="screenshot" alt="Dashboard del ciudadano">
+  <figcaption>Figura 14: Dashboard del ciudada&ntilde;o con estad&iacute;sticas, citas programadas, tr&aacute;mites disponibles e historial de solicitudes.</figcaption>
 </div>
 
 <h3>Elementos del dashboard</h3>
@@ -814,169 +813,169 @@
 <h4>Bienvenida personalizada</h4>
 <p>Saludo con el nombre del usuario y mensaje contextual.</p>
 
-<h4>Tarjetas de estadisticas</h4>
-<p>Cuatro indicadores numericos: total de tramites realizados, tramites en revision, completados y rechazados. Permite al ciudadano tener una vision rapida de su situacion.</p>
+<h4>Tarjetas de estad&iacute;sticas</h4>
+<p>Cuatro indicadores numericos: total de tr&aacute;mites realizados, tr&aacute;mites en revisi&oacute;n, completados y rechazados. Permite al ciudada&ntilde;o tener una vision rapida de su situacion.</p>
 
 <h4>Citas programadas</h4>
-<p>Seccion que muestra las citas presenciales pendientes del ciudadano, con fecha, hora y oficina asignada. Cada cita incluye un boton de 'Reagendar' que permite cambiar la fecha y hora hasta 24 horas antes de la cita programada. Si faltan menos de 24 horas, el sistema informa que ya no es posible reagendar, garantizando la organizacion logistica de las oficinas.</p>
+<p>Secci&oacute;n que muestra las citas presenciales pendientes del ciudadano, con fecha, hora y oficina asignada. Cada cita incluye un boton de 'Reagendar' que permite cambiar la fecha y hora hasta 24 horas antes de la cita programada. Si faltan menos de 24 horas, el sistema informa que ya no es posible reagendar, garantizando la organizacion logistica de las oficinas.</p>
 
-<h4>Iniciar nuevo tramite</h4>
-<p>Grid con los cuatro tramites disponibles en linea, cada uno con icono, nombre y boton de inicio directo. El ciudadano puede iniciar un tramite con un solo clic desde su dashboard.</p>
+<h4>Iniciar nuevo tr&aacute;mite</h4>
+<p>Grid con los cuatro tr&aacute;mites disponibles en l&iacute;nea, cada uno con icono, nombre y boton de inicio directo. El ciudada&ntilde;o puede iniciar un tr&aacute;mite con un solo clic desde su dashboard.</p>
 
-<h4>Mis tramites (historial)</h4>
-<p>Tabla con el registro de todos los tramites realizados, mostrando: numero de referencia (ATM-XXXXXX), tipo de tramite, fecha de solicitud y estado actual con badge de color (verde=completado, amarillo=en revision, azul=en proceso, rojo=rechazado).</p>
+<h4>Mis tr&aacute;mites (historial)</h4>
+<p>Tabla con el registro de todos los tr&aacute;mites realizados, mostrando: n&uacute;mero de referencia (ATM-XXXXXX), tipo de tr&aacute;mite, fecha de solicitud y estado actual con badge de color (verde=completado, amarillo=en revisi&oacute;n, azul=en proceso, rojo=rechazado).</p>
 
 <!-- ===================== 8. TRAMITES EN LINEA ===================== -->
-<h2 id="sec8" class="page-break">8. Tramites en Linea</h2>
+<h2 id="sec8" class="page-break">8. Tr&aacute;mites en Linea</h2>
 
-<h3 id="sec8-1">8.1 Catalogo completo de tramites</h3>
+<h3 id="sec8-1">8.1 Catalogo completo de tr&aacute;mites</h3>
 
-<p>La plataforma contempla <strong>13 tramites vehiculares</strong>, de los cuales <strong>4 estan habilitados para gestion online completa</strong> y <strong>9 requieren gestion presencial</strong> (con posibilidad de digitalizacion futura). La siguiente tabla detalla el catalogo:</p>
+<p>La plataforma contempla <strong>13 tr&aacute;mites vehiculares</strong>, de los cuales <strong>4 estan habilitados para gesti&oacute;n online completa</strong> y <strong>9 requieren gesti&oacute;n presencial</strong> (con posibilidad de digitalizaci&oacute;n futura). La siguiente tabla detalla el catalogo:</p>
 
 <table>
   <thead>
-    <tr><th>#</th><th>Tramite</th><th>Categoria</th><th>Modalidad</th><th>Costo aprox.</th><th>Tiempo est.</th></tr>
+    <tr><th>#</th><th>Tr&aacute;mite</th><th>Categor&iacute;a</th><th>Modalidad</th><th>Tiempo est.</th></tr>
   </thead>
   <tbody>
-    <tr><td>1</td><td>Matriculacion Primera Vez</td><td>Matriculacion</td><td>Online</td><td>$62 - $120</td><td>5-10 dias</td></tr>
-    <tr><td>2</td><td>Renovacion de Matricula</td><td>Matriculacion</td><td>Online</td><td>$42 - $85</td><td>3-5 dias</td></tr>
-    <tr><td>3</td><td>Duplicado de Placas</td><td>Documentos</td><td>Online</td><td>$35 - $50</td><td>5-8 dias</td></tr>
-    <tr><td>4</td><td>Transferencia de Dominio</td><td>Matriculacion</td><td>Online</td><td>$55 - $130</td><td>5-10 dias</td></tr>
-    <tr><td>5</td><td>Cambio de Caracteristicas</td><td>Actualizacion</td><td>Presencial</td><td>$30 - $45</td><td>5-10 dias</td></tr>
-    <tr><td>6</td><td>Bloqueo Vehicular</td><td>Documentos</td><td>Presencial</td><td>$15 - $25</td><td>3-5 dias</td></tr>
-    <tr><td>7</td><td>Desbloqueo Vehicular</td><td>Documentos</td><td>Presencial</td><td>$15 - $25</td><td>3-5 dias</td></tr>
-    <tr><td>8</td><td>Certificado de Matriculacion</td><td>Documentos</td><td>Presencial</td><td>$8 - $15</td><td>1-3 dias</td></tr>
-    <tr><td>9</td><td>Duplicado de Matricula</td><td>Documentos</td><td>Presencial</td><td>$25 - $35</td><td>5-8 dias</td></tr>
-    <tr><td>10</td><td>Cambio de Servicio</td><td>Actualizacion</td><td>Presencial</td><td>$45 - $80</td><td>8-15 dias</td></tr>
-    <tr><td>11</td><td>Actualizacion de Domicilio</td><td>Actualizacion</td><td>Presencial</td><td>$5 - $10</td><td>1-3 dias</td></tr>
-    <tr><td>12</td><td>Actualizacion Datos Personales</td><td>Actualizacion</td><td>Presencial</td><td>$5 - $10</td><td>1-3 dias</td></tr>
-    <tr><td>13</td><td>Actualizacion Datos Vehiculo</td><td>Actualizacion</td><td>Presencial</td><td>$10 - $20</td><td>3-5 dias</td></tr>
+    <tr><td>1</td><td>Matr&iacute;culaci&oacute;n Primera Vez</td><td>Matr&iacute;culaci&oacute;n</td><td>Online</td><td>5-10 d&iacute;as</td></tr>
+    <tr><td>2</td><td>Renovaci&oacute;n de Matr&iacute;cula</td><td>Matr&iacute;culaci&oacute;n</td><td>Online</td><td>3-5 d&iacute;as</td></tr>
+    <tr><td>3</td><td>Duplicado de Placas</td><td>Documentos</td><td>Online</td><td>5-8 d&iacute;as</td></tr>
+    <tr><td>4</td><td>Transferencia de Dominio</td><td>Matr&iacute;culaci&oacute;n</td><td>Online</td><td>5-10 d&iacute;as</td></tr>
+    <tr><td>5</td><td>Cambio de Caracter&iacute;sticas</td><td>Actualizaci&oacute;n</td><td>Presencial</td><td>5-10 d&iacute;as</td></tr>
+    <tr><td>6</td><td>Bloqueo Vehicular</td><td>Documentos</td><td>Presencial</td><td>3-5 d&iacute;as</td></tr>
+    <tr><td>7</td><td>Desbloqueo Vehicular</td><td>Documentos</td><td>Presencial</td><td>3-5 d&iacute;as</td></tr>
+    <tr><td>8</td><td>Certificado de Matr&iacute;culaci&oacute;n</td><td>Documentos</td><td>Presencial</td><td>1-3 d&iacute;as</td></tr>
+    <tr><td>9</td><td>Duplicado de Matr&iacute;cula</td><td>Documentos</td><td>Presencial</td><td>5-8 d&iacute;as</td></tr>
+    <tr><td>10</td><td>Cambio de Servicio</td><td>Actualizaci&oacute;n</td><td>Presencial</td><td>8-15 d&iacute;as</td></tr>
+    <tr><td>11</td><td>Actualizaci&oacute;n de Domicilio</td><td>Actualizaci&oacute;n</td><td>Presencial</td><td>1-3 d&iacute;as</td></tr>
+    <tr><td>12</td><td>Actualizaci&oacute;n Datos Personales</td><td>Actualizaci&oacute;n</td><td>Presencial</td><td>1-3 d&iacute;as</td></tr>
+    <tr><td>13</td><td>Actualizaci&oacute;n Datos Veh&iacute;culo</td><td>Actualizaci&oacute;n</td><td>Presencial</td><td>3-5 d&iacute;as</td></tr>
   </tbody>
 </table>
 
 <blockquote>
-  <strong>Criterio de seleccion para modalidad online:</strong> Los cuatro tramites habilitados en linea fueron seleccionados por su alta frecuencia de solicitud, la viabilidad de verificacion documental remota y la ausencia de requisitos que demanden inspeccion fisica del vehiculo (excepto revision tecnica, que se realiza en centros autorizados). Los nueve tramites presenciales requieren, en su mayoria, entrega de documentos fisicos, inspeccion vehicular directa o coordinacion con entidades judiciales.
+  <strong>Criterio de selecci&oacute;n para modalidad online:</strong> Los cuatro tr&aacute;mites habilitados en l&iacute;nea fueron selecci&oacute;nados por su alta frecuencia de solicitud, la viabilidad de verificaci&oacute;n documental remota y la ausencia de requisitos que demanden inspeccion f&iacute;sica del veh&iacute;culo (excepto revisi&oacute;n t&eacute;cnica, que se realiza en centros autorizados). Los nueve tr&aacute;mites presenciales requieren, en su mayoria, entrega de documentos fisicos, inspeccion vehicular directa o coordinacion con entidades judiciales.
 </blockquote>
 
 <h3 id="sec8-2">8.2 Wizard multi-paso</h3>
 
-<p>Los tramites en linea se gestionan mediante un <strong>wizard (asistente) multi-paso</strong> que guia al ciudadano a traves de cada etapa del proceso. Este patron de interaccion reduce la complejidad percibida al dividir formularios extensos en pasos manejables, con indicador visual de progreso.</p>
+<p>Los tr&aacute;mites en l&iacute;nea se gesti&oacute;nan mediante un <strong>wizard (asistente) multi-paso</strong> que guia al ciudada&ntilde;o a traves de cada etapa del proceso. Este patron de interaccion reduce la complejidad percibida al dividir formularios extensos en pasos manejables, con indicador visual de progreso.</p>
 
 <div class="figure">
-  <img src="screenshots/15-wizard-paso1.png" class="screenshot" alt="Wizard paso 1">
-  <figcaption>Figura 15: Wizard de tramite - Paso 1 "Informacion del vehiculo" con formulario y indicador de progreso.</figcaption>
+  <img src="/propuesta/screenshots/15-wizard-paso1.png" class="screenshot" alt="Wizard paso 1">
+  <figcaption>Figura 15: Wizard de tr&aacute;mite - Paso 1 "Informaci&oacute;n del veh&iacute;culo" con formulario y indicador de progreso.</figcaption>
 </div>
 
 <div class="figure">
-  <img src="screenshots/16-wizard-paso1-filled.png" class="screenshot" alt="Wizard paso 1 con datos">
+  <img src="/propuesta/screenshots/16-wizard-paso1-filled.png" class="screenshot" alt="Wizard paso 1 con datos">
   <figcaption>Figura 16: Wizard con datos ingresados - los campos se validan en tiempo real antes de permitir avanzar al siguiente paso.</figcaption>
 </div>
 
-<h4>Estructura tipica de un wizard (Matriculacion Primera Vez)</h4>
+<h4>Estructura tipica de un wizard (Matr&iacute;culaci&oacute;n Primera Vez)</h4>
 
 <ol>
-  <li><strong>Informacion del vehiculo:</strong> Tipo (automovil, motocicleta, camioneta, camion, bus), marca, modelo, ano, color, numero de chasis y numero de motor.</li>
-  <li><strong>Carga de documentos:</strong> Upload de factura comercial, carta de venta, cedula de identidad, certificado de votacion e improntas vehiculares. Soporte drag-and-drop con previsualizacion de archivos.</li>
-  <li><strong>Revision de datos:</strong> Resumen completo de los datos ingresados y documentos cargados para verificacion antes del pago.</li>
-  <li><strong>Pago:</strong> Seleccion de metodo de pago e ingreso de datos de transaccion (ver seccion 8.3).</li>
-  <li><strong>Confirmacion:</strong> Numero de tramite generado (ATM-XXXXXX), estado inicial "En revision", proximos pasos y opcion de imprimir comprobante.</li>
+  <li><strong>Informaci&oacute;n del veh&iacute;culo:</strong> Tipo (autom&oacute;vil, motocicleta, camioneta, camion, bus), marca, modelo, ano, color, n&uacute;mero de chasis y n&uacute;mero de motor.</li>
+  <li><strong>Carga de documentos:</strong> Upload de factura comercial, carta de venta, c&eacute;dula de identidad, certificado de votacion e improntas vehiculares. Soporte drag-and-drop con previsualizacion de archivos.</li>
+  <li><strong>Revisi&oacute;n de datos:</strong> Resumen completo de los datos ingresados y documentos cargados para verificaci&oacute;n antes del pago.</li>
+  <li><strong>Pago:</strong> Selecci&oacute;n de m&eacute;todo de pago e ingreso de datos de transacci&oacute;n (ver secci&oacute;n 8.3).</li>
+  <li><strong>Confirmaci&oacute;n:</strong> N&uacute;mero de tr&aacute;mite generado (ATM-XXXXXX), estado inicial "En revisi&oacute;n", proximos pasos y opci&oacute;n de imprimir comprobante.</li>
 </ol>
 
 <h3 id="sec8-3">8.3 Sistema de pago online</h3>
 
-<p>El portal integra un <strong>modulo de pago online simulado</strong> que demuestra la experiencia de pago completa. En el entorno de produccion, este modulo se conectara con una pasarela de pagos certificada.</p>
+<p>El portal integra un <strong>m&oacute;dulo de pago online simulado</strong> que demuestra la experiencia de pago completa. En el entorno de producci&oacute;n, este m&oacute;dulo se conectara con una pasarela de pagos certificada.</p>
 
-<p>El modal de pago ofrece tres metodos:</p>
+<p>El modal de pago ofrece tres m&eacute;todos:</p>
 
 <table>
   <thead>
-    <tr><th>Metodo</th><th>Campos requeridos</th><th>Descripcion</th></tr>
+    <tr><th>M&eacute;todo</th><th>Campos requeridos</th><th>Descripci&oacute;n</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Tarjeta de debito/credito</strong></td><td>Numero de tarjeta, nombre del titular, fecha de expiracion, CVV</td><td>Pago directo con tarjeta bancaria. Se valida formato de numero (16 digitos) y fecha de expiracion.</td></tr>
-    <tr><td><strong>Transferencia bancaria</strong></td><td>Banco de origen, numero de cuenta, numero de referencia</td><td>El ciudadano realiza la transferencia desde su banca en linea y registra la referencia del comprobante.</td></tr>
-    <tr><td><strong>Deposito bancario</strong></td><td>Banco, numero de deposito, fecha del deposito</td><td>Para ciudadanos que prefieren depositar en ventanilla. Se carga el comprobante del deposito.</td></tr>
+    <tr><td><strong>Tarjeta de debito/credito</strong></td><td>N&uacute;mero de tarjeta, nombre del titular, fecha de expiracion, CVV</td><td>Pago directo con tarjeta bancaria. Se valida formato de n&uacute;mero (16 d&iacute;gitos) y fecha de expiracion.</td></tr>
+    <tr><td><strong>Transferencia bancaria</strong></td><td>Banco de origen, n&uacute;mero de cuenta, n&uacute;mero de referencia</td><td>El ciudada&ntilde;o realiza la transferencia desde su banca en l&iacute;nea y registra la referencia del comprobante.</td></tr>
+    <tr><td><strong>Deposito bancario</strong></td><td>Banco, n&uacute;mero de deposito, fecha del deposito</td><td>Para ciudadanos que prefieren depositar en ventanilla. Se carga el comprobante del deposito.</td></tr>
   </tbody>
 </table>
 
-<p>El flujo de pago incluye cuatro etapas: seleccion de metodo, ingreso de datos, confirmacion con resumen y pantalla de exito con numero de comprobante. Una barra de progreso visual indica al ciudadano en que etapa se encuentra.</p>
+<p>El flujo de pago incluye cuatro etapas: selecci&oacute;n de m&eacute;todo, ingreso de datos, confirmaci&oacute;n con resumen y pantalla de exito con n&uacute;mero de comprobante. Una barra de progreso visual indica al ciudada&ntilde;o en que etapa se encuentra.</p>
 
 <!-- ===================== 8.4 AGENDAMIENTO DE CITAS ===================== -->
 <h3 id="sec8-4" class="page-break">8.4 Agendamiento de citas presenciales</h3>
 
-<p>Una vez completado el pago del tramite, el ciudadano debe agendar una cita presencial para la verificacion documental o entrega de placas/matricula en una de las tres oficinas de ATM Centro Guayas. El sistema de agendamiento esta integrado directamente en el wizard de tramite como un paso adicional.</p>
+<p>Una vez completado el pago del tr&aacute;mite, el ciudada&ntilde;o debe agendar una cita presencial para la verificaci&oacute;n documental o entrega de placas/matr&iacute;cula en una de las tres oficinas de ATM Centro Guayas. El sistema de agendamiento esta integrado directamente en el wizard de tr&aacute;mite como un paso adicional.</p>
 
 <div class="figure">
-  <img src="screenshots/22-wizard-agendar-cita.png" class="screenshot" alt="Wizard agendamiento de cita">
-  <figcaption>Figura 17: Paso de agendamiento de cita dentro del wizard - seleccion de oficina, fecha y horario disponible.</figcaption>
+  <img src="/propuesta/screenshots/22-wizard-agendar-cita.png" class="screenshot" alt="Wizard agendamiento de cita">
+  <figcaption>Figura 17: Paso de agendamiento de cita dentro del wizard - selecci&oacute;n de oficina, fecha y horario disponible.</figcaption>
 </div>
 
 <div class="figure">
-  <img src="screenshots/23-wizard-cita-seleccionada.png" class="screenshot" alt="Wizard cita seleccionada">
-  <figcaption>Figura 18: Resumen de la cita con fecha, hora y oficina seleccionada. El sistema muestra horarios disponibles y no disponibles.</figcaption>
+  <img src="/propuesta/screenshots/23-wizard-cita-seleccionada.png" class="screenshot" alt="Wizard cita selecci&oacute;nada">
+  <figcaption>Figura 18: Resumen de la cita con fecha, hora y oficina selecci&oacute;nada. El sistema muestra horarios disponibles y no disponibles.</figcaption>
 </div>
 
 <h4>Flujo de agendamiento</h4>
 
 <ol>
-  <li><strong>Seleccion de oficina:</strong> El ciudadano elige entre las tres oficinas de atencion (Nobol, Pedro Carbo, Santa Lucia), visualizando la direccion de cada una.</li>
-  <li><strong>Seleccion de fecha:</strong> Calendario horizontal con los proximos 15 dias habiles disponibles (excluye fines de semana).</li>
-  <li><strong>Seleccion de horario:</strong> Grid de horarios en bloques de 30 minutos (08:00-17:00, pausa almuerzo 12:00-13:00). Los horarios ocupados se muestran deshabilitados con tachado.</li>
-  <li><strong>Confirmacion:</strong> Resumen de la cita con boton de confirmacion. Se informa que podra reagendar hasta 24 horas antes.</li>
+  <li><strong>Selecci&oacute;n de oficina:</strong> El ciudada&ntilde;o elige entre las tres oficinas de atenci&oacute;n (Nobol, Pedro Carbo, Santa Lucia), visualizando la direccion de cada una.</li>
+  <li><strong>Selecci&oacute;n de fecha:</strong> Calendario horizontal con los proximos 15 d&iacute;as habiles disponibles (excluye fines de semana).</li>
+  <li><strong>Selecci&oacute;n de horario:</strong> Grid de horarios en bloques de 30 minutos (08:00-17:00, pausa almuerzo 12:00-13:00). Los horarios ocupados se muestran deshabilitados con tachado.</li>
+  <li><strong>Confirmaci&oacute;n:</strong> Resumen de la cita con boton de confirmaci&oacute;n. Se informa que podra reagendar hasta 24 horas antes.</li>
 </ol>
 
 <blockquote>
-  <strong>Politica de reagendamiento:</strong> El ciudadano puede modificar la fecha y hora de su cita desde su Dashboard personal, siempre que falten mas de 24 horas para la cita programada. Esta restriccion permite a la institucion organizar los recursos de atencion y evitar espacios vacios de ultima hora. El sistema valida automaticamente esta regla y deshabilita la opcion de reagendamiento cuando no se cumple.
+  <strong>Politica de reagendamiento:</strong> El ciudada&ntilde;o puede modificar la fecha y hora de su cita desde su Dashboard personal, siempre que falten mas de 24 horas para la cita programada. Esta restriccion permite a la instituci&oacute;n organizar los recursos de atenci&oacute;n y evitar espacios vacios de ultima hora. El sistema valida automaticamente esta regla y deshabilita la opci&oacute;n de reagendamiento cuando no se cumple.
 </blockquote>
 
 <blockquote>
-  <strong>Integracion con Odoo:</strong> Una vez confirmada y pagada la cita, el sistema puede enviar automaticamente el registro al modulo de turnos de Odoo utilizado actualmente por la institucion (ver seccion 12.1), creando el turno correspondiente sin intervencion manual del personal.
+  <strong>Integraci&oacute;n con Odoo:</strong> Una vez confirmada y pagada la cita, el sistema puede enviar automaticamente el registro al m&oacute;dulo de turnos de Odoo utilizado actualmente por la instituci&oacute;n (ver secci&oacute;n 12.1), creando el turno correspondiente sin intervencion manual del personal.
 </blockquote>
 
 <!-- ===================== 8.5 EVALUACION DEL SERVICIO ===================== -->
-<h3 id="sec8-5">8.5 Evaluacion del servicio (encuesta de satisfaccion)</h3>
+<h3 id="sec8-5">8.5 Evaluaci&oacute;n del servicio (encuesta de satisfacci&oacute;n)</h3>
 
-<p>Al completar un tramite, el portal presenta al ciudadano una encuesta de satisfaccion que permite evaluar su experiencia con el servicio. Esta herramienta de retroalimentacion es fundamental para la mejora continua de la gestion institucional y el cumplimiento de indicadores de calidad del servicio publico.</p>
+<p>Al completar un tr&aacute;mite, el portal presenta al ciudada&ntilde;o una encuesta de satisfacci&oacute;n que permite evaluar su experiencia con el servicio. Esta herramienta de retroalimentacion es fundamental para la mejora continua de la gesti&oacute;n instituci&oacute;nal y el cumplimiento de indicadores de calidad del servicio p&uacute;blico.</p>
 
-<p>La encuesta evalua cuatro dimensiones del servicio mediante una escala de 1 a 5 estrellas:</p>
+<p>La encuesta eval&uacute;a cuatro dimensiones del servicio mediante una escala de 1 a 5 estrellas:</p>
 
 <ul>
   <li>Facilidad de uso de la plataforma</li>
-  <li>Claridad de la informacion proporcionada</li>
-  <li>Rapidez del proceso en linea</li>
-  <li>Satisfaccion general con el servicio</li>
+  <li>Claridad de la informaci&oacute;n proporcionada</li>
+  <li>Rapidez del proceso en l&iacute;nea</li>
+  <li>Satisfacci&oacute;n general con el servicio</li>
 </ul>
 
-<p>Adicionalmente, el ciudadano puede incluir comentarios de texto libre con sugerencias o experiencias especificas. La participacion en la encuesta es voluntaria y puede ser omitida.</p>
+<p>Adicionalmente, el ciudada&ntilde;o puede incluir comentarios de texto libre con sugerencias o experiencias espec&iacute;ficas. La participacion en la encuesta es voluntaria y puede ser omitida.</p>
 
-<p>Los datos de las encuestas se almacenan de forma anonimizada y pueden ser utilizados para: generacion de reportes de satisfaccion ciudadana, identificacion de puntos de mejora en los procesos, cumplimiento de indicadores de gestion institucional y rendicion de cuentas ante organismos de control.</p>
+<p>Los datos de las encuestas se almacenan de forma anonimizada y pueden ser utilizados para: generacion de reportes de satisfacci&oacute;n ciudadana, identificacion de puntos de mejora en los procesos, cumplimiento de indicadores de gesti&oacute;n instituci&oacute;nal y rendici&oacute;n de cuentas ante organismos de control.</p>
 
 <!-- ===================== 9. CONSULTA DE MULTAS ===================== -->
 <h2 id="sec9" class="page-break">9. Consulta de Multas e Infracciones</h2>
 
-<p>El modulo de consulta de multas permite al ciudadano verificar si mantiene infracciones de transito pendientes de pago, emitidas por los agentes de ATM Centro Guayas en los cantones de la mancomunidad.</p>
+<p>El m&oacute;dulo de consulta de multas permite al ciudada&ntilde;o verificar si mantiene infracci&oacute;nes de tr&aacute;nsito pendientes de pago, emitidas por los agentes de ATM Centro Guayas en los cantones de la mancomunidad.</p>
 
 <div class="figure">
-  <img src="screenshots/17-consulta-multas.png" class="screenshot" alt="Formulario consulta de multas">
-  <figcaption>Figura 19: Formulario de consulta de multas. Para usuarios autenticados, la cedula se pre-completa automaticamente.</figcaption>
+  <img src="/propuesta/screenshots/17-consulta-multas.png" class="screenshot" alt="Formulario consulta de multas">
+  <figcaption>Figura 19: Formulario de consulta de multas. Para usuarios autenticados, la c&eacute;dula se pre-completa automaticamente.</figcaption>
 </div>
 
 <h3>Flujo de consulta</h3>
 
 <ol>
-  <li>El ciudadano ingresa su <strong>cedula de identidad</strong> (pre-completada si esta autenticado) y opcionalmente el numero de placa.</li>
-  <li>El sistema consulta las infracciones asociadas y presenta un resumen con tarjetas de estadisticas: total de citaciones, pendientes de pago, pagadas, puntos acumulados y monto total adeudado.</li>
-  <li>Una tabla detallada muestra cada infraccion con: numero de citacion, tipo de infraccion, articulo legal, puntos, monto, placa, fecha, lugar y estado.</li>
-  <li>El ciudadano puede filtrar las infracciones por estado (Todas, Pendientes, Pagadas) mediante pestanas.</li>
-  <li>Opciones de pago: boton "Pagar todas las multas" para liquidacion total, o boton "Pagar" individual por cada infraccion pendiente.</li>
+  <li>El ciudada&ntilde;o ingresa su <strong>c&eacute;dula de identidad</strong> (pre-completada si esta autenticado) y opci&oacute;nalmente el n&uacute;mero de placa.</li>
+  <li>El sistema consulta las infracci&oacute;nes asociadas y presenta un resumen con tarjetas de estad&iacute;sticas: total de citaciones, pendientes de pago, pagadas, puntos acumulados y monto total adeudado.</li>
+  <li>Una tabla detallada muestra cada infracci&oacute;n con: n&uacute;mero de citacion, tipo de infracci&oacute;n, articulo legal, puntos, monto, placa, fecha, lugar y estado.</li>
+  <li>El ciudada&ntilde;o puede filtrar las infracci&oacute;nes por estado (Todas, Pendientes, Pagadas) mediante pestanas.</li>
+  <li>Opci&oacute;nes de pago: boton "Pagar todas las multas" para liquidacion total, o boton "Pagar" individual por cada infracci&oacute;n pendiente.</li>
 </ol>
 
 <div class="figure">
-  <img src="screenshots/18-consulta-multas-resultado.png" class="screenshot" alt="Resultado consulta de multas">
-  <figcaption>Figura 20: Resultado de la consulta de multas con tarjetas de resumen, tabla detallada de infracciones y opciones de pago individual o total.</figcaption>
+  <img src="/propuesta/screenshots/18-consulta-multas-resultado.png" class="screenshot" alt="Resultado consulta de multas">
+  <figcaption>Figura 20: Resultado de la consulta de multas con tarjetas de resumen, tabla detallada de infracci&oacute;nes y opci&oacute;nes de pago individual o total.</figcaption>
 </div>
 
-<p>Adicionalmente, la pagina incluye una seccion de <strong>Puntos de Pago Autorizados</strong> que lista los seis canales oficiales para el pago de multas:</p>
+<p>Adicionalmente, la p&aacute;gina incluye una secci&oacute;n de <strong>Puntos de Pago Autorizados</strong> que lista los seis canales oficiales para el pago de multas:</p>
 <ul>
   <li>Ventanillas de ATM Centro Guayas (Nobol, Pedro Carbo, Santa Lucia)</li>
   <li>Banco del Pacifico (todas las agencias a nivel nacional)</li>
@@ -985,46 +984,46 @@
 </ul>
 
 <!-- ===================== 10. SEGUIMIENTO ===================== -->
-<h2 id="sec10" class="page-break">10. Seguimiento de Tramites</h2>
+<h2 id="sec10" class="page-break">10. Seguimiento de Tr&aacute;mites</h2>
 
-<p>El modulo de seguimiento permite a cualquier ciudadano (sin necesidad de autenticarse) consultar el estado de un tramite previamente iniciado, utilizando el <strong>numero de referencia</strong> proporcionado al momento de la solicitud.</p>
+<p>El m&oacute;dulo de seguimiento permite a cualquier ciudada&ntilde;o (sin necesidad de autenticarse) consultar el estado de un tr&aacute;mite previamente iniciado, utilizando el <strong>n&uacute;mero de referencia</strong> proporcionado al momento de la solicitud.</p>
 
 <div class="figure">
-  <img src="screenshots/12-seguimiento-form.png" class="screenshot" alt="Formulario de seguimiento">
-  <figcaption>Figura 21: Formulario de seguimiento de tramites. Accesible sin autenticacion para facilitar la consulta.</figcaption>
+  <img src="/propuesta/screenshots/12-seguimiento-form.png" class="screenshot" alt="Formulario de seguimiento">
+  <figcaption>Figura 21: Formulario de seguimiento de tr&aacute;mites. Accesible sin autenticaci&oacute;n para facilitar la consulta.</figcaption>
 </div>
 
 <div class="figure">
-  <img src="screenshots/13-seguimiento-resultado.png" class="screenshot" alt="Resultado de seguimiento">
+  <img src="/propuesta/screenshots/13-seguimiento-resultado.png" class="screenshot" alt="Resultado de seguimiento">
   <figcaption>Figura 22: Resultado del seguimiento con tarjeta de estado, timeline de progreso y alertas contextuales.</figcaption>
 </div>
 
 <h3>Elementos del resultado</h3>
 
 <ul>
-  <li><strong>Tarjeta de estado:</strong> Muestra el numero de tramite, nombre del solicitante, cedula (parcialmente oculta por privacidad), fecha de solicitud y estado actual con badge de color.</li>
-  <li><strong>Timeline de progreso:</strong> Historial cronologico con todas las actualizaciones del tramite, cada una con fecha, hora, titulo y descripcion detallada. Los puntos de la timeline se colorean segun su relevancia.</li>
-  <li><strong>Alertas contextuales:</strong> Mensajes informativos que varian segun el estado: instrucciones de recogida para tramites completados, motivos de rechazo con indicaciones para reenvio, o estimaciones de tiempo para tramites en proceso.</li>
+  <li><strong>Tarjeta de estado:</strong> Muestra el n&uacute;mero de tr&aacute;mite, nombre del solicitante, c&eacute;dula (parcialmente oculta por privacidad), fecha de solicitud y estado actual con badge de color.</li>
+  <li><strong>Timeline de progreso:</strong> Historial cronologico con todas las actualizaci&oacute;nes del tr&aacute;mite, cada una con fecha, hora, titulo y descripci&oacute;n detallada. Los puntos de la timeline se colorean segun su relevancia.</li>
+  <li><strong>Alertas contextuales:</strong> Mensajes informativos que varian segun el estado: instrucciones de recogida para tr&aacute;mites completados, motivos de rechazo con indicaciones para reenvio, o estimaciones de tiempo para tr&aacute;mites en proceso.</li>
 </ul>
 
 <blockquote>
-  <strong>Acceso publico por diseno:</strong> La decision de no requerir autenticacion para el seguimiento de tramites responde a un criterio de usabilidad: el ciudadano puede compartir el numero de referencia con un tercero (familiar, gestor) para que consulte el estado, sin necesidad de compartir credenciales de acceso.
+  <strong>Acceso p&uacute;blico por dise&ntilde;o:</strong> La decision de no requerir autenticaci&oacute;n para el seguimiento de tr&aacute;mites responde a un criterio de usabilidad: el ciudada&ntilde;o puede compartir el n&uacute;mero de referencia con un tercero (familiar, gestor) para que consulte el estado, sin necesidad de compartir credenciales de acceso.
 </blockquote>
 
 <!-- ===================== 11. SEGURIDAD DE LA PLATAFORMA ===================== -->
 <h2 id="sec11" class="page-break">11. Seguridad de la Plataforma</h2>
 
-<p>La seguridad de la plataforma es una prioridad arquitectonica que abarca multiples capas de proteccion, desde la infraestructura de red hasta la gestion de sesiones de usuario. El diseno de seguridad sigue el principio de defensa en profundidad (Defense in Depth), donde multiples controles complementarios protegen la informacion y los servicios.</p>
+<p>La seguridad de la plataforma es una prioridad arquitect&oacute;nica que abarca multiples capas de protecci&oacute;n, desde la infraestructura de red hasta la gesti&oacute;n de sesiones de usuario. El dise&ntilde;o de seguridad sigue el principio de defensa en profundidad (Defense in Depth), donde multiples controles complementarios protegen la informaci&oacute;n y los servicios.</p>
 
-<h3>11.1 Firewall de Aplicaciones Web (WAF)</h3>
+<h3>11.1 Firewall de Aplicaci&oacute;nes Web (WAF)</h3>
 
-<p>Se recomienda la implementacion de un Web Application Firewall (WAF) como primera linea de defensa ante ataques web. El WAF puede desplegarse como servicio gestionado (Cloudflare WAF, AWS WAF) o como solucion on-premise (ModSecurity).</p>
+<p>Se recomienda la implementaci&oacute;n de un Web Application Firewall (WAF) como primera l&iacute;nea de defensa ante ataques web. El WAF puede desplegarse como servicio gesti&oacute;nado (Cloudflare WAF, AWS WAF) o como soluci&oacute;n on-premise (ModSecurity).</p>
 
 <p>Funciones del WAF:</p>
 <ul>
-  <li>Proteccion contra inyecciones SQL (SQLi) y Cross-Site Scripting (XSS)</li>
+  <li>Protecci&oacute;n contra inyecciones SQL (SQLi) y Cross-Site Scripting (XSS)</li>
   <li>Mitigacion de ataques de denegacion de servicio distribuido (DDoS)</li>
-  <li>Filtrado de trafico malicioso basado en firmas y heuristicas</li>
+  <li>Filtrado de tr&aacute;fico malicioso basado en firmas y heuristicas</li>
   <li>Rate limiting para prevenir ataques de fuerza bruta</li>
   <li>Bloqueo de bots y scrapers automatizados</li>
   <li>Geo-blocking para restringir acceso desde regiones no autorizadas</li>
@@ -1032,64 +1031,64 @@
 
 <h3>11.2 Listas de bloqueo y control de acceso</h3>
 
-<p>El sistema implementa mecanismos de control de acceso a nivel de aplicacion:</p>
+<p>El sistema implementa mecanismos de control de acceso a nivel de aplicaci&oacute;n:</p>
 <ul>
-  <li><strong>Listas negras de IPs:</strong> Bloqueo automatico de direcciones IP que generen patrones de trafico sospechoso (multiples intentos de login fallidos, escaneo de puertos, inyecciones).</li>
-  <li><strong>Rate limiting por endpoint:</strong> Limite de solicitudes por minuto en endpoints sensibles (login: 5 intentos/min, API de multas: 10 consultas/min, formulario de contacto: 3 envios/min).</li>
-  <li><strong>CAPTCHA adaptativo:</strong> Activacion automatica de verificacion CAPTCHA tras detectar patrones anomalos de uso.</li>
+  <li><strong>Listas negras de IPs:</strong> Bloqueo automatico de direcciones IP que generen patrones de tr&aacute;fico sospechoso (multiples intentos de login fallidos, escaneo de puertos, inyecciones).</li>
+  <li><strong>Rate limiting por endpoint:</strong> L&iacute;mite de solicitudes por minuto en endpoints sensibles (login: 5 intentos/min, API de multas: 10 consultas/min, formulario de contacto: 3 envios/min).</li>
+  <li><strong>CAPTCHA adaptativo:</strong> Activacion automatica de verificaci&oacute;n CAPTCHA tras detectar patrones anomalos de uso.</li>
   <li><strong>Bloqueo temporal de cuentas:</strong> Tras 5 intentos fallidos de inicio de sesion, la cuenta se bloquea por 15 minutos con notificacion por email al titular.</li>
 </ul>
 
-<h3>11.3 Gestion de sesiones y autenticacion</h3>
+<h3>11.3 Gesti&oacute;n de sesiones y autenticaci&oacute;n</h3>
 
 <ul>
-  <li>Tokens JWT con expiracion configurable (sesion activa: 2 horas, remember me: 7 dias)</li>
-  <li>Refresh tokens con rotacion automatica</li>
-  <li>Invalidacion de sesion en todos los dispositivos al cambiar contrasena</li>
+  <li>Tokens JWT con expiracion configurable (sesion activa: 2 horas, remember me: 7 d&iacute;as)</li>
+  <li>Refresh tokens con rotaci&oacute;n automatica</li>
+  <li>Invalidaci&oacute;n de sesion en todos los dispositivos al cambiar contrase&ntilde;a</li>
   <li>Deteccion de sesiones concurrentes sospechosas</li>
   <li>Cierre de sesion automatico por inactividad (30 minutos)</li>
 </ul>
 
-<h3>11.4 Proteccion de datos en transito y reposo</h3>
+<h3>11.4 Protecci&oacute;n de datos en tr&aacute;nsito y reposo</h3>
 
 <ul>
   <li>HTTPS obligatorio con TLS 1.3 (HSTS habilitado)</li>
-  <li>Cifrado de contrasenas con bcrypt (cost factor 12)</li>
-  <li>Datos sensibles cifrados en base de datos (cedulas, datos de contacto) con AES-256</li>
+  <li>Cifrado de contrase&ntilde;as con bcrypt (cost factor 12)</li>
+  <li>Datos sensibles cifrados en base de datos (c&eacute;dulas, datos de contacto) con AES-256</li>
   <li>Logs de auditoria inmutables para trazabilidad de acciones administrativas</li>
-  <li>Backups cifrados con rotacion diaria (7 dias), semanal (4 semanas), mensual (12 meses)</li>
+  <li>Backups cifrados con rotaci&oacute;n diaria (7 d&iacute;as), semanal (4 semanas), mensual (12 meses)</li>
 </ul>
 
 <h3>11.5 Headers de seguridad HTTP</h3>
 
 <table>
   <thead>
-    <tr><th>Header</th><th>Valor</th><th>Proteccion</th></tr>
+    <tr><th>Header</th><th>Valor</th><th>Protecci&oacute;n</th></tr>
   </thead>
   <tbody>
     <tr><td>Content-Security-Policy</td><td>default-src 'self'; script-src 'self'</td><td>Previene XSS y carga de scripts externos</td></tr>
     <tr><td>X-Frame-Options</td><td>DENY</td><td>Previene clickjacking</td></tr>
     <tr><td>X-Content-Type-Options</td><td>nosniff</td><td>Previene MIME sniffing</td></tr>
     <tr><td>Strict-Transport-Security</td><td>max-age=31536000; includeSubDomains</td><td>Fuerza HTTPS</td></tr>
-    <tr><td>Referrer-Policy</td><td>strict-origin-when-cross-origin</td><td>Controla informacion del referrer</td></tr>
+    <tr><td>Referrer-Policy</td><td>strict-origin-when-cross-origin</td><td>Controla informaci&oacute;n del referrer</td></tr>
     <tr><td>Permissions-Policy</td><td>camera=(), microphone=(), geolocation=(self)</td><td>Restringe APIs del navegador</td></tr>
   </tbody>
 </table>
 
 <h3>11.6 Privacidad y cumplimiento normativo</h3>
 
-<p>La proteccion de datos personales es un pilar fundamental del diseno de la plataforma, alineado con la <strong>Ley Organica de Proteccion de Datos Personales (LOPDP)</strong> del Ecuador, vigente desde mayo de 2021, y su reglamento de aplicacion.</p>
+<p>La protecci&oacute;n de datos personales es un pilar fundamental del dise&ntilde;o de la plataforma, al&iacute;neado con la <strong>Ley Org&aacute;nica de Protecci&oacute;n de Datos Personales (LOPDP)</strong> del Ecuador, vigente desde mayo de 2021, y su reglamento de aplicaci&oacute;n.</p>
 
 <h4>Principios de tratamiento de datos</h4>
 
 <p>El portal opera bajo los siguientes principios, conforme al Art. 10 de la LOPDP:</p>
 
 <ul>
-  <li><strong>Legitimidad:</strong> Los datos se recopilan unicamente con el consentimiento explicito del ciudadano al momento del registro (aceptacion de terminos y condiciones).</li>
-  <li><strong>Finalidad:</strong> Los datos personales se utilizan exclusivamente para la gestion de tramites vehiculares, consulta de infracciones y comunicacion institucional. No se comparten con terceros para fines comerciales.</li>
-  <li><strong>Minimizacion:</strong> Solo se solicitan los datos estrictamente necesarios para la prestacion del servicio (cedula, nombre, contacto). No se recopilan datos biometricos, financieros ni de salud.</li>
+  <li><strong>Legitimidad:</strong> Los datos se recopilan unicamente con el consentimiento explicito del ciudada&ntilde;o al momento del registro (aceptacion de terminos y condiciones).</li>
+  <li><strong>Finalidad:</strong> Los datos personales se utilizan exclusivamente para la gesti&oacute;n de tr&aacute;mites vehiculares, consulta de infracci&oacute;nes y comunicaci&oacute;n instituci&oacute;nal. No se comparten con terceros para fines comerciales.</li>
+  <li><strong>Minimizaci&oacute;n:</strong> Solo se solicitan los datos estrictamente necesarios para la prestaci&oacute;n del servicio (c&eacute;dula, nombre, contacto). No se recopilan datos biometricos, financieros ni de salud.</li>
   <li><strong>Proporcionalidad:</strong> El volumen de datos recopilado es proporcional a la naturaleza del servicio prestado.</li>
-  <li><strong>Confidencialidad:</strong> Los datos se almacenan de forma segura y solo son accesibles por personal autorizado de la institucion.</li>
+  <li><strong>Confidencialidad:</strong> Los datos se almacenan de forma segura y solo son accesibles por personal autorizado de la instituci&oacute;n.</li>
 </ul>
 
 <h4>Datos recopilados</h4>
@@ -1099,101 +1098,101 @@
     <tr><th>Dato</th><th>Finalidad</th><th>Base legal</th></tr>
   </thead>
   <tbody>
-    <tr><td>Cedula de identidad</td><td>Identificacion unica del ciudadano, vinculacion con registros vehiculares</td><td>Requisito legal para tramites vehiculares (LOTTTSV Art. 89)</td></tr>
+    <tr><td>C&eacute;dula de identidad</td><td>Identificacion unica del ciudadano, vinculaci&oacute;n con registros vehiculares</td><td>Requisito legal para tr&aacute;mites vehiculares (LOTTTSV Art. 89)</td></tr>
     <tr><td>Nombres y apellidos</td><td>Personalizacion de la experiencia, generacion de documentos</td><td>Consentimiento del titular</td></tr>
-    <tr><td>Correo electronico</td><td>Comunicacion de estados de tramites, recuperacion de cuenta</td><td>Consentimiento del titular</td></tr>
-    <tr><td>Telefono</td><td>Canal alternativo de comunicacion para notificaciones urgentes</td><td>Consentimiento del titular</td></tr>
-    <tr><td>Direccion</td><td>Verificacion domiciliaria requerida para tramites de matriculacion</td><td>Requisito legal (LOTTTSV)</td></tr>
-    <tr><td>Datos del vehiculo</td><td>Gestion de tramites de matriculacion, consulta de infracciones</td><td>Requisito legal para registro vehicular</td></tr>
+    <tr><td>Correo electr&oacute;nico</td><td>Comunicaci&oacute;n de estados de tr&aacute;mites, recuperacion de cuenta</td><td>Consentimiento del titular</td></tr>
+    <tr><td>Telefono</td><td>Canal alternativo de comunicaci&oacute;n para notificaciones urgentes</td><td>Consentimiento del titular</td></tr>
+    <tr><td>Direccion</td><td>Verificaci&oacute;n domiciliaria requerida para tr&aacute;mites de matr&iacute;culaci&oacute;n</td><td>Requisito legal (LOTTTSV)</td></tr>
+    <tr><td>Datos del veh&iacute;culo</td><td>Gesti&oacute;n de tr&aacute;mites de matr&iacute;culaci&oacute;n, consulta de infracci&oacute;nes</td><td>Requisito legal para registro vehicular</td></tr>
   </tbody>
 </table>
 
 <h4>Derechos ARCO del ciudadano</h4>
 
-<p>Conforme a los articulos 17-22 de la LOPDP, el ciudadano registrado tiene derecho a:</p>
+<p>Conforme a los art&iacute;culos 17-22 de la LOPDP, el ciudada&ntilde;o registrado tiene derecho a:</p>
 
 <ul>
-  <li><strong>Acceso (A):</strong> Solicitar y obtener informacion sobre los datos personales almacenados por la institucion.</li>
-  <li><strong>Rectificacion (R):</strong> Corregir datos inexactos o incompletos a traves de su dashboard personal o solicitud formal.</li>
-  <li><strong>Cancelacion (C):</strong> Solicitar la eliminacion de su cuenta y datos asociados cuando estos ya no sean necesarios para la finalidad original.</li>
-  <li><strong>Oposicion (O):</strong> Oponerse al tratamiento de sus datos para finalidades distintas a la gestion de tramites.</li>
+  <li><strong>Acceso (A):</strong> Solicitar y obtener informaci&oacute;n sobre los datos personales almacenados por la instituci&oacute;n.</li>
+  <li><strong>Rectificaci&oacute;n (R):</strong> Corregir datos inexactos o incompletos a traves de su dashboard personal o solicitud formal.</li>
+  <li><strong>Cancelaci&oacute;n (C):</strong> Solicitar la eliminacion de su cuenta y datos asociados cuando estos ya no sean necesarios para la finalidad original.</li>
+  <li><strong>Oposici&oacute;n (O):</strong> Oponerse al tratamiento de sus datos para finalidades distintas a la gesti&oacute;n de tr&aacute;mites.</li>
 </ul>
 
-<h4>Gestion de datos de pago</h4>
+<h4>Gesti&oacute;n de datos de pago</h4>
 
-<p>La plataforma <strong>no almacena datos bancarios o de tarjetas de credito/debito</strong>. El procesamiento de pagos se delega integramente a la pasarela de pagos certificada, que cumple con los estandares <strong>PCI DSS (Payment Card Industry Data Security Standard)</strong>. ATM Centro Guayas solo recibe una confirmacion de la transaccion (numero de referencia, monto, fecha) sin acceso a los datos financieros del ciudadano.</p>
+<p>La plataforma <strong>no almacena datos bancarios o de tarjetas de credito/debito</strong>. El procesamiento de pagos se delega integramente a la pasarela de pagos certificada, que cumple con los est&aacute;ndares <strong>PCI DSS (Payment Card Industry Data Security Standard)</strong>. ATM Centro Guayas solo recibe una confirmaci&oacute;n de la transacci&oacute;n (n&uacute;mero de referencia, monto, fecha) sin acceso a los datos financieros del ciudadano.</p>
 
 <h3>11.7 Monitoreo y respuesta a incidentes</h3>
 
 <ul>
   <li>Monitoreo en tiempo real de logs de acceso y errores</li>
-  <li>Alertas automaticas ante patrones anomalos (picos de trafico, errores 5xx, intentos de intrusion)</li>
+  <li>Alertas automaticas ante patrones anomalos (picos de tr&aacute;fico, errores 5xx, intentos de intrusion)</li>
   <li>Plan de respuesta a incidentes con tiempos de respuesta definidos (critico: 1h, alto: 4h, medio: 24h)</li>
   <li>Registro de incidentes y post-mortem documentado</li>
   <li>Escaneo periodico de vulnerabilidades (semanal automatizado, trimestral manual)</li>
 </ul>
 
 <!-- ===================== 12. INTEGRACION CON SISTEMAS EXISTENTES ===================== -->
-<h2 id="sec12" class="page-break">12. Integracion con Sistemas Existentes</h2>
+<h2 id="sec12" class="page-break">12. Integraci&oacute;n con Sistemas Existentes</h2>
 
-<p>ATM Centro Guayas cuenta actualmente con sistemas operativos internos que gestionan diversas funciones institucionales. La nueva plataforma web esta disenada para integrarse con estos sistemas existentes, maximizando la inversion tecnologica ya realizada y evitando la duplicacion de datos y procesos.</p>
+<p>ATM Centro Guayas cuenta actualmente con sistemas operativos internos que gesti&oacute;nan diversas funciones instituci&oacute;nales. La nueva plataforma web esta dise&ntilde;ada para integrarse con estos sistemas existentes, maximizando la inversion tecnologica ya realizada y evitando la duplicacion de datos y procesos.</p>
 
-<h3 id="sec12-1">12.1 Integracion con Odoo (sistema de turnos)</h3>
+<h3 id="sec12-1">12.1 Integraci&oacute;n con Odoo (sistema de turnos)</h3>
 
-<p>La institucion utiliza actualmente Odoo como plataforma de gestion de turnos para la atencion presencial en sus oficinas. La integracion propuesta permite que los turnos generados desde el portal web se sincronicen automaticamente con Odoo, eliminando la necesidad de registro manual por parte del personal.</p>
+<p>La instituci&oacute;n utiliza actualmente Odoo como plataforma de gesti&oacute;n de turnos para la atenci&oacute;n presencial en sus oficinas. La integraci&oacute;n propuesta permite que los turnos generados desde el portal web se sincronicen automaticamente con Odoo, eliminando la necesidad de registro manual por parte del personal.</p>
 
-<h4>Flujo de integracion propuesto</h4>
+<h4>Flujo de integraci&oacute;n propuesto</h4>
 
 <ol>
-  <li>El ciudadano completa el tramite en linea y realiza el pago.</li>
-  <li>El ciudadano agenda su cita presencial seleccionando oficina, fecha y hora.</li>
-  <li>El portal envia automaticamente los datos del turno a Odoo via API REST: nombre del ciudadano, cedula, tipo de tramite, numero de referencia, oficina, fecha y hora.</li>
-  <li>Odoo crea el registro del turno en su modulo correspondiente y confirma la recepcion.</li>
+  <li>El ciudada&ntilde;o completa el tr&aacute;mite en l&iacute;nea y realiza el pago.</li>
+  <li>El ciudada&ntilde;o agenda su cita presencial selecci&oacute;nando oficina, fecha y hora.</li>
+  <li>El portal envia automaticamente los datos del turno a Odoo via API REST: nombre del ciudadano, c&eacute;dula, tipo de tr&aacute;mite, n&uacute;mero de referencia, oficina, fecha y hora.</li>
+  <li>Odoo crea el registro del turno en su m&oacute;dulo correspondiente y confirma la recepci&oacute;n.</li>
   <li>El dia de la cita, el personal de ventanilla visualiza el turno en Odoo con toda la documentacion previamente cargada en el portal.</li>
 </ol>
 
-<h4>Requisitos tecnicos para la integracion</h4>
+<h4>Requisitos t&eacute;cnicos para la integraci&oacute;n</h4>
 <ul>
   <li>Odoo debe exponer una API REST o XML-RPC accesible desde el servidor del portal</li>
-  <li>Se requiere un usuario de servicio (service account) con permisos limitados al modulo de turnos</li>
-  <li>Definicion de un contrato de API (endpoint, campos, formatos, codigos de respuesta)</li>
+  <li>Se requiere un usuario de servicio (service account) con permisos limitados al m&oacute;dulo de turnos</li>
+  <li>Definicion de un contrato de API (endpoint, campos, formatos, c&oacute;digos de respuesta)</li>
   <li>Mecanismo de reintentos y cola de mensajes para manejar indisponibilidad temporal de Odoo</li>
 </ul>
 
 <blockquote>
-  <strong>Nota importante:</strong> Si Odoo no cuenta actualmente con una API configurada para recibir turnos externos, sera necesario desarrollar un modulo personalizado o configurar los endpoints correspondientes. Este desarrollo puede realizarse en paralelo con la Fase 3 (Backend) del proyecto y tiene un costo estimado adicional de $1,500 - $3,000 dependiendo de la complejidad del modulo de turnos existente.
+  <strong>Nota importante:</strong> Si Odoo no cuenta actualmente con una API configurada para recibir turnos externos, ser&aacute; necesario desarrollar un m&oacute;dulo personalizado o configurar los endpoints correspondientes. Este desarrollo puede realizarse en paralelo con la Fase 3 (Backend) del proyecto. El alcance y esfuerzo de este componente se determinar&aacute; durante el levantamiento de requisitos, dependiendo de la complejidad del m&oacute;dulo de turnos existente.
 </blockquote>
 
 <h3 id="sec12-2">12.2 Servicios de consulta de multas</h3>
 
-<p>ATM Centro Guayas dispone de servicios oficiales que proveen informacion sobre multas e infracciones de transito. Sin embargo, se ha identificado que estos servicios presentan intermitencias en su disponibilidad y limitaciones en el detalle de la informacion proporcionada.</p>
+<p>ATM Centro Guayas dispone de servicios oficiales que proveen informaci&oacute;n sobre multas e infracci&oacute;nes de tr&aacute;nsito. Sin embargo, se ha identificado que estos servicios presentan intermitencias en su disponibilidad y limitaciones en el detalle de la informaci&oacute;n proporcionada.</p>
 
 <h4>Estrategias propuestas para mitigar el impacto en la experiencia del usuario</h4>
 
 <table>
   <thead>
-    <tr><th>Estrategia</th><th>Descripcion</th><th>Beneficio</th></tr>
+    <tr><th>Estrategia</th><th>Descripci&oacute;n</th><th>Beneficio</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Cache con TTL</strong></td><td>Almacenar en cache las consultas exitosas por un periodo configurable (ej: 15 minutos). Si el servicio no responde, mostrar los ultimos datos disponibles con indicacion de la hora de actualizacion</td><td>Reduce dependencia del servicio externo y mejora tiempos de respuesta</td></tr>
+    <tr><td><strong>Cache con TTL</strong></td><td>Almacenar en cache las consultas exitosas por un periodo configurable (ej: 15 minutos). Si el servicio no responde, mostrar los ultimos datos disponibles con indicacion de la hora de actualizaci&oacute;n</td><td>Reduce dependencia del servicio externo y mejora tiempos de respuesta</td></tr>
     <tr><td><strong>Circuit Breaker</strong></td><td>Implementar el patron Circuit Breaker: tras N fallas consecutivas del servicio, dejar de consultarlo por M minutos y mostrar un mensaje informativo al ciudadano</td><td>Evita saturar un servicio inestable y mejora la experiencia ante caidas</td></tr>
-    <tr><td><strong>Fallback con datos locales</strong></td><td>Mantener una copia local sincronizada periodicamente (batch nocturno) de las infracciones. Si el servicio en tiempo real falla, consultar la copia local</td><td>Garantiza disponibilidad del servicio de consulta incluso ante caidas prolongadas</td></tr>
-    <tr><td><strong>Mensajes informativos</strong></td><td>Cuando el servicio externo no responde, mostrar al ciudadano un mensaje claro: "El servicio de consulta de multas esta temporalmente fuera de linea. Por favor intente nuevamente en unos minutos o contacte nuestras oficinas."</td><td>Transparencia con el ciudadano, reduccion de frustracion</td></tr>
+    <tr><td><strong>Fallback con datos locales</strong></td><td>Mantener una copia local sincronizada periodicamente (batch nocturno) de las infracci&oacute;nes. Si el servicio en tiempo real falla, consultar la copia local</td><td>Garantiza disponibilidad del servicio de consulta incluso ante caidas prolongadas</td></tr>
+    <tr><td><strong>Mensajes informativos</strong></td><td>Cuando el servicio externo no responde, mostrar al ciudada&ntilde;o un mensaje claro: "El servicio de consulta de multas esta temporalmente fuera de l&iacute;nea. Por favor intente nuevamente en unos minutos o contacte nuestras oficinas."</td><td>Transparencia con el ciudadano, reduccion de frustracion</td></tr>
     <tr><td><strong>Reintentos con backoff</strong></td><td>Implementar reintentos automaticos con espera exponencial (1s, 2s, 4s) antes de declarar falla</td><td>Maneja blips temporales sin afectar la experiencia</td></tr>
     <tr><td><strong>Monitoreo de SLA</strong></td><td>Dashboard interno que monitorea la disponibilidad y tiempos de respuesta del servicio de multas, con alertas automaticas</td><td>Visibilidad operativa para el equipo de TI</td></tr>
   </tbody>
 </table>
 
 <blockquote>
-  <strong>Recomendacion:</strong> Se sugiere que ATM Centro Guayas solicite al proveedor del servicio de multas documentacion actualizada de la API (endpoints, formatos, codigos de error, limites de tasa) y un acuerdo de nivel de servicio (SLA) que establezca compromisos de disponibilidad. Si el servicio actual no dispone de una API formal, se propone desarrollar una capa de abstraccion (API Gateway) que centralice y normalice las consultas.
+  <strong>Recomendacion:</strong> Se sugiere que ATM Centro Guayas solicite al proveedor del servicio de multas documentacion actualizada de la API (endpoints, formatos, c&oacute;digos de error, limites de tasa) y un acuerdo de nivel de servicio (SLA) que establezca compromisos de disponibilidad. Si el servicio actual no dispone de una API formal, se propone desarrollar una capa de abstraccion (API Gateway) que centralice y normalice las consultas.
 </blockquote>
 
 <!-- ===================== 13. INFRAESTRUCTURA Y OPCIONES DE DESPLIEGUE ===================== -->
-<h2 id="sec13" class="page-break">13. Infraestructura y Opciones de Despliegue</h2>
+<h2 id="sec13" class="page-break">13. Infraestructura y Opci&oacute;nes de Despliegue</h2>
 
-<p>La definicion de la infraestructura de alojamiento es una decision critica que impacta en la disponibilidad, el rendimiento, la seguridad y los costos operativos de la plataforma. A continuacion se analizan tres escenarios de despliegue con sus ventajas, desventajas y recomendaciones.</p>
+<p>La definicion de la infraestructura de alojamiento es una decision cr&iacute;tica que impacta en la disponibilidad, el rendimiento, la seguridad y los costos operativos de la plataforma. A continuacion se analizan tres escenarios de despliegue con sus ventajas, desventajas y recomendaciones.</p>
 
-<h3>13.1 Opcion A: Hosting en la nube (recomendado)</h3>
+<h3>13.1 Opci&oacute;n A: Hosting en la nube (recomendado)</h3>
 
 <table>
   <thead>
@@ -1202,16 +1201,15 @@
   <tbody>
     <tr><td><strong>Proveedor</strong></td><td>DigitalOcean App Platform, AWS, Google Cloud</td></tr>
     <tr><td><strong>Modelo</strong></td><td>Plataforma como Servicio (PaaS)</td></tr>
-    <tr><td><strong>Ventajas</strong></td><td>Escalabilidad automatica, alta disponibilidad (99.9%+ SLA), SSL automatico, backups gestionados, deploy automatico desde GitHub, sin necesidad de administracion de servidores</td></tr>
-    <tr><td><strong>Desventajas</strong></td><td>Dependencia de proveedor externo, datos fuera de la institucion (mitigable con cifrado), costo recurrente mensual</td></tr>
-    <tr><td><strong>Costo estimado</strong></td><td>$25 - $60/mes (app + DB + storage)</td></tr>
-    <tr><td><strong>Requerimiento</strong></td><td>Comunicacion con los servicios internos de ATM (API de multas, Odoo) a traves de VPN site-to-site o endpoints publicos seguros</td></tr>
+    <tr><td><strong>Ventajas</strong></td><td>Escalabilidad automatica, alta disponibilidad (99.9%+ SLA), SSL automatico, backups gesti&oacute;nados, deploy automatico desde GitHub, sin necesidad de administraci&oacute;n de servidores</td></tr>
+    <tr><td><strong>Desventajas</strong></td><td>Dependencia de proveedor externo, datos fuera de la instituci&oacute;n (mitigable con cifrado), costo recurrente mensual</td></tr>
+    <tr><td><strong>Requerimiento</strong></td><td>Comunicaci&oacute;n con los servicios internos de ATM (API de multas, Odoo) a trav&eacute;s de VPN site-to-site o endpoints p&uacute;blicos seguros</td></tr>
   </tbody>
 </table>
 
-<p>Esta opcion requiere que los servicios internos de la institucion (Odoo, sistema de multas) expongan endpoints accesibles desde internet de forma segura (HTTPS + autenticacion por API key o OAuth). Si los servicios internos solo estan disponibles en la red local, se debe configurar una VPN site-to-site entre el proveedor cloud y la red de ATM Centro Guayas.</p>
+<p>Esta opci&oacute;n requiere que los servicios internos de la instituci&oacute;n (Odoo, sistema de multas) expongan endpoints accesibles desde internet de forma segura (HTTPS + autenticaci&oacute;n por API key o OAuth). Si los servicios internos solo estan disponibles en la red local, se debe configurar una VPN site-to-site entre el proveedor cloud y la red de ATM Centro Guayas.</p>
 
-<h3>13.2 Opcion B: Servidor propio de la institucion</h3>
+<h3>13.2 Opci&oacute;n B: Servidor propio de la instituci&oacute;n</h3>
 
 <table>
   <thead>
@@ -1220,105 +1218,32 @@
   <tbody>
     <tr><td><strong>Ubicacion</strong></td><td>Servidores actuales de ATM Centro Guayas</td></tr>
     <tr><td><strong>Modelo</strong></td><td>On-premise / infraestructura propia</td></tr>
-    <tr><td><strong>Ventajas</strong></td><td>Datos dentro de la institucion, acceso directo a servicios internos (Odoo, DB de multas) sin necesidad de VPN, control total de la infraestructura</td></tr>
-    <tr><td><strong>Desventajas</strong></td><td>Requiere personal de TI dedicado para administracion, actualizaciones de seguridad manuales, disponibilidad limitada por capacidad del data center, riesgo de caida por fallas electricas o de red local</td></tr>
-    <tr><td><strong>Costo estimado</strong></td><td>$0/mes adicional (usa infraestructura existente) + costo de personal TI</td></tr>
-    <tr><td><strong>Requerimiento</strong></td><td>Servidor con Node.js 20+, Nginx/Apache como reverse proxy, certificado SSL, minimo 2GB RAM, 20GB disco</td></tr>
+    <tr><td><strong>Ventajas</strong></td><td>Datos dentro de la instituci&oacute;n, acceso directo a servicios internos (Odoo, DB de multas) sin necesidad de VPN, control total de la infraestructura</td></tr>
+    <tr><td><strong>Desventajas</strong></td><td>Requiere personal de TI dedicado para administraci&oacute;n, actualizaci&oacute;nes de seguridad manuales, disponibilidad limitada por capacidad del data center, riesgo de ca&iacute;da por fallas el&eacute;ctricas o de red local</td></tr>
+    <tr><td><strong>Requerimiento</strong></td><td>Servidor con Node.js 20+, Nginx/Apache como reverse proxy, certificado SSL, m&iacute;nimo 2GB RAM, 20GB disco</td></tr>
   </tbody>
 </table>
 
-<p>La pagina web puede desplegarse directamente en los servidores de la institucion si estos cuentan con la capacidad y conectividad necesarias. Esta opcion simplifica la comunicacion con servicios internos pero traslada la responsabilidad de mantenimiento, seguridad y disponibilidad al equipo de TI de ATM Centro Guayas.</p>
+<p>La p&aacute;gina web puede desplegarse directamente en los servidores de la instituci&oacute;n si estos cuentan con la capacidad y conectividad necesarias. Esta opci&oacute;n simplifica la comunicaci&oacute;n con servicios internos pero traslada la responsabilidad de mantenimiento, seguridad y disponibilidad al equipo de TI de ATM Centro Guayas.</p>
 
-<h3>13.3 Opcion C: Modelo hibrido (recomendado para fase inicial)</h3>
+<h3>13.3 Opci&oacute;n C: Modelo h&iacute;brido (recomendado para fase inicial)</h3>
 
-<p>Se propone un modelo hibrido donde el frontend (portal web) se aloja en la nube y el backend/API se ejecuta en los servidores de la institucion. Esto combina las ventajas de ambos modelos:</p>
+<p>Se propone un modelo h&iacute;brido donde el frontend (portal web) se aloja en la nube y el backend/API se ejecuta en los servidores de la instituci&oacute;n. Esto combina las ventajas de ambos modelos:</p>
 
 <ul>
   <li><strong>Frontend en la nube (DigitalOcean/CDN):</strong> Alta disponibilidad, SSL automatico, deploy automatizado, cache global</li>
   <li><strong>Backend/API en servidor ATM:</strong> Acceso directo a Odoo y sistemas internos, datos sensibles permanecen on-premise</li>
-  <li><strong>Comunicacion:</strong> El frontend consume la API del backend a traves de HTTPS con autenticacion JWT</li>
+  <li><strong>Comunicaci&oacute;n:</strong> El frontend consume la API del backend a traves de HTTPS con autenticaci&oacute;n JWT</li>
 </ul>
 
-<p>Este modelo permite que la pagina web este siempre disponible (incluso si los servidores internos presentan intermitencias) y muestre contenido informativo (noticias, servicios, transparencia), mientras que las funciones transaccionales (tramites, multas, pagos) dependen de la comunicacion con el backend on-premise.</p>
+<p>Este modelo permite que la p&aacute;gina web este siempre disponible (incluso si los servidores internos presentan intermitencias) y muestre contenido informativo (noticias, servicios, transparencia), mientras que las funciones transacci&oacute;nales (tr&aacute;mites, multas, pagos) dependen de la comunicaci&oacute;n con el backend on-premise.</p>
 
 <blockquote>
-  <strong>Recomendacion:</strong> Para la fase de prototipo y lanzamiento inicial, se recomienda la Opcion A (hosting cloud completo) con la Opcion C como objetivo de mediano plazo una vez que se desarrolle el backend y se configuren las integraciones con los sistemas internos.
+  <strong>Recomendacion:</strong> Para la fase de prototipo y lanzamiento inicial, se recomienda la Opci&oacute;n A (hosting cloud completo) con la Opci&oacute;n C como objetivo de media&ntilde;o plazo una vez que se desarrolle el backend y se configuren las integraci&oacute;nes con los sistemas internos.
 </blockquote>
 
-<!-- ===================== 14. PRESUPUESTO ===================== -->
-<h2 id="sec14" class="page-break">14. Presupuesto Estimado</h2>
-
-<p>El siguiente presupuesto contempla los costos de desarrollo, infraestructura y mantenimiento de la plataforma para su primer ano de operacion.</p>
-
-<h3>14.1 Costos de desarrollo</h3>
-
-<table>
-  <thead>
-    <tr><th>Concepto</th><th>Detalle</th><th>Costo estimado</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Diseno UI/UX</td><td>Investigacion de usuarios, wireframes, prototipado, diseno visual</td><td>$3,500 - $5,000</td></tr>
-    <tr><td>Desarrollo frontend</td><td>Aplicacion React completa, 13+ paginas, componentes, responsive</td><td>$8,000 - $12,000</td></tr>
-    <tr><td>Desarrollo backend (API)</td><td>API REST, autenticacion, base de datos, logica de negocio</td><td>$6,000 - $9,000</td></tr>
-    <tr><td>Integracion pasarela de pagos</td><td>Configuracion y pruebas con pasarela certificada PCI DSS</td><td>$2,000 - $3,500</td></tr>
-    <tr><td>Integracion Odoo + API multas</td><td>Desarrollo de conectores y API si no existe</td><td>$1,500 - $3,000</td></tr>
-    <tr><td>Pruebas y QA</td><td>Testing funcional, seguridad, rendimiento, accesibilidad</td><td>$1,500 - $2,500</td></tr>
-    <tr><td>Capacitacion</td><td>Entrenamiento al personal de ATM en gestion del portal</td><td>$800 - $1,200</td></tr>
-    <tr><td><strong>Subtotal desarrollo</strong></td><td></td><td><strong>$23,300 - $36,200</strong></td></tr>
-  </tbody>
-</table>
-
-<h3>14.2 Costos de infraestructura (mensual)</h3>
-
-<table>
-  <thead>
-    <tr><th>Concepto</th><th>Proveedor/Especificacion</th><th>Costo mensual</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Hosting aplicacion</td><td>DigitalOcean App Platform (Starter/Basic)</td><td>$5 - $12</td></tr>
-    <tr><td>Base de datos</td><td>DigitalOcean Managed PostgreSQL (1 GB RAM)</td><td>$15 - $25</td></tr>
-    <tr><td>Dominio</td><td>Renovacion anual (prorrateado)</td><td>$1.50</td></tr>
-    <tr><td>Certificado SSL</td><td>Let's Encrypt (gratuito) / incluido en hosting</td><td>$0</td></tr>
-    <tr><td>CDN y almacenamiento</td><td>DigitalOcean Spaces (documentos subidos)</td><td>$5 - $10</td></tr>
-    <tr><td>Monitoreo</td><td>UptimeRobot (plan gratuito) + logs</td><td>$0</td></tr>
-    <tr><td><strong>Subtotal infraestructura</strong></td><td></td><td><strong>$26.50 - $48.50 /mes</strong></td></tr>
-  </tbody>
-</table>
-
-<h3>14.3 Costos de mantenimiento (mensual)</h3>
-
-<table>
-  <thead>
-    <tr><th>Concepto</th><th>Detalle</th><th>Costo mensual</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Soporte tecnico</td><td>Correccion de errores, actualizaciones de seguridad</td><td>$300 - $500</td></tr>
-    <tr><td>Actualizaciones de contenido</td><td>Noticias, documentos de transparencia, datos institucionales</td><td>$150 - $250</td></tr>
-    <tr><td>Backups</td><td>Respaldos automaticos diarios de base de datos</td><td>$5 - $10</td></tr>
-    <tr><td><strong>Subtotal mantenimiento</strong></td><td></td><td><strong>$455 - $760 /mes</strong></td></tr>
-  </tbody>
-</table>
-
-<h3>14.4 Resumen anual</h3>
-
-<table>
-  <thead>
-    <tr><th>Concepto</th><th>Primer ano</th><th>Anos subsiguientes</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Desarrollo (unico)</td><td>$23,300 - $36,200</td><td>$0</td></tr>
-    <tr><td>Infraestructura (anual)</td><td>$318 - $582</td><td>$318 - $582</td></tr>
-    <tr><td>Mantenimiento (anual)</td><td>$5,460 - $9,120</td><td>$5,460 - $9,120</td></tr>
-    <tr><td><strong>Total</strong></td><td><strong>$29,078 - $45,902</strong></td><td><strong>$5,778 - $9,702</strong></td></tr>
-  </tbody>
-</table>
-
-<blockquote>
-  <strong>Retorno de inversion (ROI):</strong> Considerando que ATM Centro Guayas procesa aproximadamente 15,000 tramites vehiculares anuales y que la digitalizacion podria reducir un 60% de las visitas presenciales (9,000 tramites), el ahorro en costos operativos (personal de ventanilla, insumos, espacio fisico) y la reduccion de tiempos de procesamiento pueden generar un retorno de inversion positivo dentro de los primeros 12-18 meses de operacion.
-</blockquote>
-
-<!-- ===================== 15. CRONOGRAMA ===================== -->
-<h2 id="sec15" class="page-break">15. Cronograma de Implementacion</h2>
+<!-- ===================== 14. CRONOGRAMA ===================== -->
+<h2 id="sec14" class="page-break">14. Cronograma de Implementaci&oacute;n</h2>
 
 <p>El proyecto se estructura en cinco fases con una duracion total estimada de <strong>16-20 semanas</strong> (4-5 meses).</p>
 
@@ -1328,22 +1253,22 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Fase 1: Diseno y Prototipado</strong></td>
-      <td>Investigacion de usuarios, diseno UI/UX, prototipo interactivo, aprobacion visual</td>
+      <td><strong>Fase 1: Dise&ntilde;o y Prototipado</strong></td>
+      <td>Investigacion de usuarios, dise&ntilde;o UI/UX, prototipo interactivo, aprobacion visual</td>
       <td>2-3 semanas</td>
       <td>Prototipo funcional aprobado (completado)</td>
     </tr>
     <tr>
       <td><strong>Fase 2: Desarrollo Frontend</strong></td>
-      <td>Componentes React, paginas, formularios, responsive, accesibilidad</td>
+      <td>Componentes React, p&aacute;ginas, formularios, responsive, accesibilidad</td>
       <td>4-5 semanas</td>
-      <td>Aplicacion frontend funcional con datos simulados</td>
+      <td>Aplicaci&oacute;n frontend funcional con datos simulados</td>
     </tr>
     <tr>
       <td><strong>Fase 3: Desarrollo Backend</strong></td>
-      <td>API REST, base de datos, autenticacion JWT, integracion pasarela de pagos, validacion de documentos</td>
+      <td>API REST, base de datos, autenticaci&oacute;n JWT, integraci&oacute;n pasarela de pagos, validaci&oacute;n de documentos</td>
       <td>5-6 semanas</td>
-      <td>API documentada, base de datos en produccion</td>
+      <td>API documentada, base de datos en producci&oacute;n</td>
     </tr>
     <tr>
       <td><strong>Fase 4: Pruebas y QA</strong></td>
@@ -1353,9 +1278,9 @@
     </tr>
     <tr>
       <td><strong>Fase 5: Despliegue y Capacitacion</strong></td>
-      <td>Configuracion de produccion, migracion de datos, capacitacion al personal, lanzamiento controlado</td>
+      <td>Configuraci&oacute;n de producci&oacute;n, migraci&oacute;n de datos, capacitacion al personal, lanzamiento controlado</td>
       <td>2-3 semanas</td>
-      <td>Portal en produccion, manual de usuario, personal capacitado</td>
+      <td>Portal en producci&oacute;n, manual de usuario, personal capacitado</td>
     </tr>
   </tbody>
 </table>
@@ -1375,7 +1300,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Fase 1: Diseno</strong></td>
+      <td><strong>Fase 1: Dise&ntilde;o</strong></td>
       <td style="background: #003876; color: white; text-align: center;">======</td>
       <td></td>
       <td></td>
@@ -1417,40 +1342,41 @@
   </tbody>
 </table>
 
-<!-- ===================== 16. CONCLUSIONES ===================== -->
-<h2 id="sec16" class="page-break">16. Conclusiones y Proximos Pasos</h2>
+<!-- ===================== 15. CONCLUSIONES ===================== -->
+<h2 id="sec15" class="page-break">15. Conclusiones y Pr&oacute;ximos Pasos</h2>
 
-<p>El rediseno del portal web de ATM Centro Guayas representa una transformacion significativa en la forma en que la institucion se relaciona con la ciudadania. La plataforma propuesta no solo moderniza la presencia digital de la entidad, sino que <strong>digitaliza procesos que historicamente han requerido la presencia fisica del ciudadano</strong>, con el consecuente ahorro de tiempo, recursos y reduccion de la huella burocratica.</p>
+<p>El redise&ntilde;o del portal web de ATM Centro Guayas representa una transformacion significativa en la forma en que la instituci&oacute;n se relaciona con la ciudadan&iacute;a. La plataforma propuesta no solo moderniza la presencia digital de la entidad, sino que <strong>digitaliza procesos que historicamente han requerido la presencia f&iacute;sica del ciudadano</strong>, con el consecuente ahorro de tiempo, recursos y reduccion de la huella burocratica.</p>
 
 <h3>Beneficios clave</h3>
 
 <ul>
-  <li><strong>Para el ciudadano:</strong> Reduccion de hasta un 70% en visitas presenciales, ahorro de tiempo y costos de traslado, transparencia en el estado de sus tramites, acceso 24/7 a la informacion y servicios.</li>
-  <li><strong>Para la institucion:</strong> Reduccion de carga operativa en ventanilla, disminucion de errores en la captura de datos (el ciudadano ingresa su propia informacion), trazabilidad completa de tramites, cumplimiento de normativas de gobierno digital y transparencia.</li>
-  <li><strong>Para el ecosistema gubernamental:</strong> Posicionamiento de ATM Centro Guayas como referente de modernizacion digital entre las entidades de transito del pais, alineacion con el Plan Nacional de Gobierno Electronico.</li>
+  <li><strong>Para el ciudadano:</strong> Reduccion de hasta un 70% en visitas presenciales, ahorro de tiempo y costos de traslado, transparencia en el estado de sus tr&aacute;mites, acceso 24/7 a la informaci&oacute;n y servicios.</li>
+  <li><strong>Para la instituci&oacute;n:</strong> Reduccion de carga operativa en ventanilla, disminucion de errores en la captura de datos (el ciudada&ntilde;o ingresa su propia informaci&oacute;n), trazabilidad completa de tr&aacute;mites, cumplimiento de normativas de gobierno digital y transparencia.</li>
+  <li><strong>Para el ecosistema gubernamental:</strong> Posicionamiento de ATM Centro Guayas como referente de modernizacion digital entre las entidades de tr&aacute;nsito del pais, al&iacute;neacion con el Plan Nacional de Gobierno Electronico.</li>
 </ul>
 
 <h3>Proximos pasos recomendados</h3>
 
 <ol>
-  <li><strong>Aprobacion de la propuesta</strong> y definicion del alcance final del proyecto.</li>
-  <li><strong>Levantamiento de requisitos detallados</strong> con el equipo operativo de ATM Centro Guayas para cada tramite vehicular.</li>
-  <li><strong>Definicion de servicios y funcionalidades:</strong> Determinar cuales servicios institucionales se integraran en la primera version, que funcionalidades especificas se requieren y su viabilidad tecnica en los plazos establecidos.</li>
-  <li><strong>Definicion de infraestructura:</strong> Decidir entre las opciones de despliegue analizadas en la seccion 13 (nube, servidor propio o modelo hibrido), considerando la capacidad del equipo de TI y los requerimientos de conectividad con sistemas internos.</li>
-  <li><strong>Seleccion de pasarela de pagos</strong> certificada y negociacion de comisiones por transaccion.</li>
-  <li><strong>Configuracion de integracion con Odoo:</strong> definicion del contrato de API para sincronizacion de turnos y desarrollo del modulo conector si es necesario.</li>
-  <li><strong>Evaluacion de viabilidad tecnica</strong> de cada tramite propuesto para modalidad online, incluyendo disponibilidad de APIs de consulta (multas, datos vehiculares) y capacidades del sistema actual.</li>
+  <li><strong>Aprobaci&oacute;n de la propuesta</strong> y definici&oacute;n del alcance final del proyecto.</li>
+  <li><strong>Levantamiento de requisitos detallados</strong> con el equipo operativo de ATM Centro Guayas para cada tr&aacute;mite vehicular.</li>
+  <li><strong>Definici&oacute;n de servicios y funcionalidades:</strong> Determinar cu&aacute;les servicios instituci&oacute;nales se integrar&aacute;n en la primera versi&oacute;n, qu&eacute; funcionalidades espec&iacute;ficas se requieren y su viabilidad t&eacute;cnica en los plazos establecidos.</li>
+  <li><strong>Definici&oacute;n de infraestructura:</strong> Decidir entre las opci&oacute;nes de despliegue analizadas en la secci&oacute;n 13 (nube, servidor propio o modelo h&iacute;brido), considerando la capacidad del equipo de TI y los requerimientos de conectividad con sistemas internos.</li>
+  <li><strong>Evaluaci&oacute;n de viabilidad t&eacute;cnica</strong> de cada tr&aacute;mite propuesto para modalidad online, incluyendo disponibilidad de APIs de consulta (multas, datos vehiculares) y capacidades del sistema actual.</li>
+  <li><strong>Selecci&oacute;n de pasarela de pagos</strong> certificada y negociaci&oacute;n de comisiones por transacci&oacute;n.</li>
+  <li><strong>Configuraci&oacute;n de integraci&oacute;n con Odoo:</strong> definici&oacute;n del contrato de API para sincronizaci&oacute;n de turnos y desarrollo del m&oacute;dulo conector si es necesario.</li>
+  <li><strong>Determinaci&oacute;n del presupuesto:</strong> Una vez definidos los servicios a implementar, las funcionalidades requeridas y la infraestructura selecci&oacute;nada, se elaborar&aacute; el presupuesto detallado del proyecto acorde al alcance acordado.</li>
   <li><strong>Inicio de la Fase 2</strong> de desarrollo con sprints quincenales y demos de avance.</li>
-  <li><strong>Plan de migracion</strong> del portal actual (Joomla 3) al nuevo portal.</li>
+  <li><strong>Plan de migraci&oacute;n</strong> del portal actual (Joomla 3) al nuevo portal.</li>
 </ol>
 
 <div class="info-box" style="margin-top: 24px;">
-  <strong>Nota importante:</strong> Este documento presenta un <strong>prototipo funcional</strong> que tiene como objetivo ilustrar el flujo propuesto de la plataforma tal como ha sido levantado. No constituye el producto final, sino un <strong>punto de partida</strong> para realizar el levantamiento definitivo de requisitos, validar los flujos de usuario con el equipo operativo de la institucion y afinar las funcionalidades antes de iniciar el desarrollo productivo.
+  <strong>Nota importante:</strong> Este documento presenta un <strong>prototipo funcional</strong> que tiene como objetivo ilustrar el flujo propuesto de la plataforma tal como ha sido levantado. No constituye el producto final, sino un <strong>punto de partida</strong> para realizar el levantamiento definitivo de requisitos, validar los flujos de usuario con el equipo operativo de la instituci&oacute;n y afinar las funcionalidades antes de iniciar el desarrollo productivo.
 </div>
 
 <h3>Acceso al prototipo</h3>
 
-<p>El prototipo funcional se encuentra disponible en linea para pruebas y evaluacion:</p>
+<p>El prototipo funcional se encuentra disponible en l&iacute;nea para pruebas y evaluaci&oacute;n:</p>
 
 <table>
   <thead>
@@ -1458,30 +1384,30 @@
   </thead>
   <tbody>
     <tr><td><strong>URL del prototipo</strong></td><td><a href="https://atm-centro-guayas-dfirx.ondigitalocean.app" target="_blank">https://atm-centro-guayas-dfirx.ondigitalocean.app</a></td></tr>
-    <tr><td><strong>Usuario de prueba</strong></td><td>Cedula: <strong>0912345678</strong></td></tr>
-    <tr><td><strong>Contrasena</strong></td><td><strong>Demo12345</strong></td></tr>
+    <tr><td><strong>Usuario de prueba</strong></td><td>C&eacute;dula: <strong>0912345678</strong></td></tr>
+    <tr><td><strong>Contrase&ntilde;a</strong></td><td><strong>Demo12345</strong></td></tr>
   </tbody>
 </table>
 
-<p>Con estas credenciales se puede acceder al dashboard, iniciar tramites en linea, consultar multas y probar todas las funcionalidades de la plataforma. Tambien es posible:</p>
+<p>Con estas credenciales se puede acceder al dashboard, iniciar tr&aacute;mites en l&iacute;nea, consultar multas y probar todas las funcionalidades de la plataforma. Tambi&eacute;n es posible:</p>
 
 <ul>
   <li><strong>Registrar un usuario nuevo</strong> para probar el flujo completo de registro en 3 pasos.</li>
-  <li><strong>Iniciar un tramite</strong> para recorrer el wizard multi-paso con carga de documentos, pago y agendamiento de cita.</li>
+  <li><strong>Iniciar un tr&aacute;mite</strong> para recorrer el wizard multi-paso con carga de documentos, pago y agendamiento de cita.</li>
   <li><strong>Reagendar una cita</strong> desde el dashboard para verificar la restriccion de 24 horas.</li>
-  <li><strong>Consultar multas</strong> ingresando cualquier numero de cedula.</li>
-  <li><strong>Dar seguimiento a un tramite</strong> con cualquier numero de referencia en formato ATM-XXXXXX.</li>
-  <li><strong>Evaluar el servicio</strong> al completar un tramite, mediante la encuesta de satisfaccion.</li>
+  <li><strong>Consultar multas</strong> ingresando cualquier n&uacute;mero de c&eacute;dula.</li>
+  <li><strong>Dar seguimiento a un tr&aacute;mite</strong> con cualquier n&uacute;mero de referencia en formato ATM-XXXXXX.</li>
+  <li><strong>Evaluar el servicio</strong> al completar un tr&aacute;mite, mediante la encuesta de satisfacci&oacute;n.</li>
 </ul>
 
 <blockquote>
-  <strong>Alcance del prototipo:</strong> Los datos mostrados (multas, tramites, pagos) son simulados con fines demostrativos. Ningun dato ingresado en el prototipo es almacenado en servidores externos ni tiene validez institucional. El prototipo representa exclusivamente los flujos de interaccion propuestos y servira como base para el levantamiento final de requisitos.
+  <strong>Alcance del prototipo:</strong> Los datos mostrados (multas, tr&aacute;mites, pagos) son simulados con fines demostrativos. Ningun dato ingresado en el prototipo es almacenado en servidores externos ni tiene validez instituci&oacute;nal. El prototipo representa exclusivamente los flujos de interaccion propuestos y servira como base para el levantamiento final de requisitos.
 </blockquote>
 
 <br><br>
 <hr style="border: none; border-top: 2px solid var(--azul-primario); margin: 40px 0 20px;">
 <p style="text-align: center; font-family: Inter, sans-serif; font-size: 9pt; color: var(--gris-500);">
-  <strong>Propuesta Tecnica - Portal ATM Centro Guayas EP</strong><br>
+  <strong>Propuesta T&eacute;cnica - Portal ATM Centro Guayas EP</strong><br>
   Documento confidencial | Marzo 2026 | Version 1.0
 </p>
 
