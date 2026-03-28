@@ -16,6 +16,7 @@ import InstitucionPage from './pages/InstitucionPage';
 import ConsultaMultasPage from './pages/ConsultaMultasPage';
 import SeguimientoPage from './pages/SeguimientoPage';
 import NoticiaDetailPage from './pages/NoticiaDetailPage';
+import PropuestaPage from './pages/PropuestaPage';
 
 export default function App() {
   return (
@@ -46,6 +47,10 @@ export default function App() {
               element={<ProtectedRoute><ConsultaMultasPage /></ProtectedRoute>}
             />
             <Route path="/seguimiento" element={<SeguimientoPage />} />
+            <Route
+              path="/propuesta"
+              element={<ProtectedRoute><PropuestaPage /></ProtectedRoute>}
+            />
           </Route>
         </Routes>
       </AuthProvider>
