@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import PagoOnlineModal from '../ui/PagoOnlineModal';
+import AgendarCita from './AgendarCita';
+import EncuestaServicio from '../ui/EncuestaServicio';
 
 export default function TramiteWizard({ tramite, onComplete }) {
   const { saveTramite } = useAuth();
@@ -11,12 +13,23 @@ export default function TramiteWizard({ tramite, onComplete }) {
   const [tramiteGuardado, setTramiteGuardado] = useState(null);
   const [pagoModal, setPagoModal] = useState(false);
   const [pagado, setPagado] = useState(false);
+  const [cita, setCita] = useState(null);
+  const [mostrarEncuesta, setMostrarEncuesta] = useState(false);
 
-  const pasos = tramite.pasos;
+  // Add "Agendar cita" step before Confirmacion
+  const pasosOriginales = tramite.pasos;
+  const idxConfirmacion = pasosOriginales.length - 1;
+  const pasos = [
+    ...pasosOriginales.slice(0, idxConfirmacion),
+    { titulo: 'Agendar cita', campos: [], esCita: true },
+    pasosOriginales[idxConfirmacion],
+  ];
+
   const paso = pasos[pasoActual];
   const esUltimoPaso = pasoActual === pasos.length - 1;
-  const esPasoRevision = paso.campos.length === 0 && !esUltimoPaso;
+  const esPasoRevision = paso.campos.length === 0 && !esUltimoPaso && !paso.esCita;
   const esPasoPago = paso.titulo.toLowerCase().includes('pago');
+  const esPasoCita = !!paso.esCita;
 
   const updateField = (nombre, valor) => {
     setFormData((prev) => ({ ...prev, [nombre]: valor }));
@@ -28,6 +41,7 @@ export default function TramiteWizard({ tramite, onComplete }) {
 
   const canProceed = () => {
     if (esPasoRevision || esUltimoPaso) return true;
+    if (esPasoCita) return !!cita;
     if (esPasoPago) return pagado;
     return paso.campos.every((campo) => {
       if (!campo.required) return true;
@@ -43,6 +57,7 @@ export default function TramiteWizard({ tramite, onComplete }) {
         slug: tramite.slug,
         datos: formData,
         archivos: Object.keys(files).map((k) => ({ campo: k, nombre: files[k]?.name })),
+        cita: cita,
       });
       setTramiteGuardado(saved);
       setCompletado(true);
@@ -65,6 +80,10 @@ export default function TramiteWizard({ tramite, onComplete }) {
       pagoMetodo: datoPago.metodo,
       pagoFecha: datoPago.fecha,
     }));
+  };
+
+  const handleAgendar = (citaData) => {
+    setCita(citaData);
   };
 
   const renderCampo = (campo) => {
@@ -128,7 +147,7 @@ export default function TramiteWizard({ tramite, onComplete }) {
       <h3 className="mb-2">Resumen de datos ingresados</h3>
       <dl>
         {Object.entries(formData).filter(([key]) => !key.startsWith('pago')).map(([key, value]) => {
-          const campo = pasos.flatMap((p) => p.campos).find((c) => c.nombre === key);
+          const campo = pasosOriginales.flatMap((p) => p.campos).find((c) => c.nombre === key);
           return (
             <div key={key} style={{ display: 'contents' }}>
               <dt>{campo?.label || key}</dt>
@@ -137,7 +156,7 @@ export default function TramiteWizard({ tramite, onComplete }) {
           );
         })}
         {Object.entries(files).map(([key, file]) => {
-          const campo = pasos.flatMap((p) => p.campos).find((c) => c.nombre === key);
+          const campo = pasosOriginales.flatMap((p) => p.campos).find((c) => c.nombre === key);
           return (
             <div key={key} style={{ display: 'contents' }}>
               <dt>{campo?.label || key}</dt>
@@ -196,10 +215,55 @@ export default function TramiteWizard({ tramite, onComplete }) {
     </div>
   );
 
+  const renderPasoCita = () => (
+    <div>
+      {cita ? (
+        <div className="wizard-cita-confirmada">
+          <div className="wizard-cita-confirmada__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" width="40" height="40">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Cita agendada</h3>
+          <div className="wizard-cita-confirmada__detalle">
+            <div><span>Oficina:</span><strong>{cita.oficinaNombre}</strong></div>
+            <div><span>Direccion:</span><strong>{cita.oficinaDireccion}</strong></div>
+            <div><span>Fecha:</span><strong>{cita.fechaTexto}</strong></div>
+            <div><span>Hora:</span><strong>{cita.hora}</strong></div>
+          </div>
+          <button
+            className="btn btn-secondary btn-sm"
+            onClick={() => setCita(null)}
+            type="button"
+            style={{ marginTop: 12 }}
+          >
+            Cambiar fecha/hora
+          </button>
+          <p className="agendar-cita__nota" style={{ marginTop: 12 }}>
+            Podra reagendar su cita hasta 24 horas antes de la fecha programada desde su panel de control.
+          </p>
+        </div>
+      ) : (
+        <AgendarCita onAgendar={handleAgendar} />
+      )}
+    </div>
+  );
+
   const renderConfirmacion = () => {
     if (!completado) {
       return renderRevision();
     }
+
+    if (mostrarEncuesta) {
+      return (
+        <EncuestaServicio
+          tramiteNombre={tramite.nombre}
+          onSubmit={() => setMostrarEncuesta(false)}
+          onSkip={() => setMostrarEncuesta(false)}
+        />
+      );
+    }
+
     return (
       <div className="wizard-confirmacion">
         <div className="wizard-success-icon">
@@ -213,10 +277,30 @@ export default function TramiteWizard({ tramite, onComplete }) {
         <div className="numero-tramite">ATM-{String(tramiteGuardado?.id).slice(-6)}</div>
         <p><strong>Estado:</strong> En revision</p>
         {pagado && <p><strong>Pago:</strong> Confirmado - {formData.pagoComprobante}</p>}
+        {cita && (
+          <div className="wizard-confirmacion-cita">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--azul-primario)" strokeWidth="2" width="18" height="18">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <div>
+              <strong>Cita agendada:</strong> {cita.fechaTexto} a las {cita.hora}
+              <br/><span className="text-muted">{cita.oficinaNombre} - {cita.oficinaDireccion}</span>
+            </div>
+          </div>
+        )}
         <p className="text-muted mt-2">
-          Puede consultar el estado de su tramite en su panel de control.
-          Le notificaremos por correo electronico cuando haya actualizaciones.
+          Puede consultar el estado de su tramite y gestionar su cita desde su panel de control.
         </p>
+        <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 20, flexWrap: 'wrap' }}>
+          <button className="btn btn-secondary" onClick={() => setMostrarEncuesta(true)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
+              <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/>
+            </svg>
+            Evaluar servicio
+          </button>
+          <a href="/dashboard" className="btn btn-primary">Ir al panel de control</a>
+        </div>
       </div>
     );
   };
@@ -244,6 +328,8 @@ export default function TramiteWizard({ tramite, onComplete }) {
 
           {esUltimoPaso ? (
             renderConfirmacion()
+          ) : esPasoCita ? (
+            renderPasoCita()
           ) : esPasoPago ? (
             renderPasoPago()
           ) : esPasoRevision ? (
@@ -270,12 +356,6 @@ export default function TramiteWizard({ tramite, onComplete }) {
               >
                 {esUltimoPaso ? 'Enviar tramite' : 'Siguiente'}
               </button>
-            </div>
-          )}
-
-          {completado && (
-            <div className="text-center mt-3">
-              <a href="/dashboard" className="btn btn-primary">Ir al panel de control</a>
             </div>
           )}
         </div>

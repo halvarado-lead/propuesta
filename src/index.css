@@ -3107,3 +3107,349 @@ img {
   a { color: black; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
 }
+
+/* ============================================
+   AGENDAR CITA
+   ============================================ */
+.agendar-cita {
+  background: var(--blanco);
+}
+
+.agendar-cita__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gris-200);
+}
+.agendar-cita__header h3 { margin: 0; color: var(--azul-primario); font-size: 1.1rem; }
+.agendar-cita__header p { margin: 4px 0 0; color: var(--gris-500); font-size: 0.85rem; }
+
+.agendar-cita__section { margin-bottom: 24px; }
+.agendar-cita__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--gris-700);
+  font-size: 0.9rem;
+}
+
+.agendar-cita__oficinas { display: flex; flex-direction: column; gap: 8px; }
+.agendar-cita__oficina {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid var(--gris-200);
+  border-radius: var(--radius-md);
+  background: var(--blanco);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+.agendar-cita__oficina:hover { border-color: var(--azul-claro); background: var(--azul-bg); }
+.agendar-cita__oficina.active {
+  border-color: var(--azul-primario);
+  background: var(--azul-bg);
+  box-shadow: 0 0 0 3px rgba(0,56,118,0.1);
+}
+.agendar-cita__oficina strong { display: block; color: var(--gris-700); font-size: 0.9rem; }
+.agendar-cita__oficina span { display: block; color: var(--gris-500); font-size: 0.8rem; }
+
+.agendar-cita__fechas {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.agendar-cita__fecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 52px;
+  padding: 10px 8px;
+  border: 2px solid var(--gris-200);
+  border-radius: var(--radius-md);
+  background: var(--blanco);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.agendar-cita__fecha:hover { border-color: var(--azul-claro); }
+.agendar-cita__fecha.active {
+  border-color: var(--azul-primario);
+  background: var(--azul-primario);
+  color: white;
+}
+.agendar-cita__fecha-dia { font-size: 1.2rem; font-weight: 700; line-height: 1; }
+.agendar-cita__fecha-mes { font-size: 0.7rem; text-transform: uppercase; margin-top: 2px; }
+
+.agendar-cita__horas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 8px;
+}
+.agendar-cita__hora {
+  padding: 10px 8px;
+  border: 2px solid var(--gris-200);
+  border-radius: var(--radius-sm);
+  background: var(--blanco);
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+.agendar-cita__hora:hover:not(.disabled) { border-color: var(--azul-claro); }
+.agendar-cita__hora.active {
+  border-color: var(--azul-primario);
+  background: var(--azul-primario);
+  color: white;
+}
+.agendar-cita__hora.disabled {
+  background: var(--gris-100);
+  color: var(--gris-400);
+  cursor: not-allowed;
+  border-color: var(--gris-100);
+  text-decoration: line-through;
+}
+
+.agendar-cita__leyenda {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--gris-500);
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.dot--disponible { background: var(--verde-servicio); }
+.dot--ocupado { background: var(--gris-300); }
+
+.agendar-cita__resumen {
+  background: var(--azul-bg);
+  border: 1px solid var(--azul-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 20px;
+}
+.agendar-cita__resumen h4 { margin: 0 0 12px; color: var(--azul-primario); }
+.agendar-cita__resumen-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.agendar-cita__resumen-grid > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+.agendar-cita__resumen-grid span { color: var(--gris-500); }
+.agendar-cita__resumen-grid strong { color: var(--gris-700); }
+
+.agendar-cita__nota {
+  font-size: 0.8rem;
+  color: var(--gris-500);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* Wizard cita confirmada */
+.wizard-cita-confirmada {
+  text-align: center;
+  padding: 20px 0;
+}
+.wizard-cita-confirmada__icon { margin-bottom: 12px; }
+.wizard-cita-confirmada h3 { color: #059669; margin-bottom: 16px; }
+.wizard-cita-confirmada__detalle {
+  background: var(--gris-50);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+.wizard-cita-confirmada__detalle > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+.wizard-cita-confirmada__detalle span { color: var(--gris-500); }
+
+/* Wizard confirmacion cita block */
+.wizard-confirmacion-cita {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--azul-bg);
+  border: 1px solid var(--azul-border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin: 12px auto;
+  max-width: 500px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   CITAS EN DASHBOARD
+   ============================================ */
+.citas-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.cita-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--gris-200);
+  border-radius: var(--radius-md);
+  background: var(--gris-50);
+  flex-wrap: wrap;
+}
+
+.cita-card__info h4 { margin: 0 0 8px; color: var(--azul-primario); font-size: 0.95rem; }
+.cita-card__detalle {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cita-card__detalle > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--gris-700);
+}
+
+.cita-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cita-card__no-reagendar {
+  font-size: 0.75rem;
+  color: var(--rojo-alerta);
+  font-style: italic;
+}
+
+.cita-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--azul-bg);
+  color: var(--azul-primario);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   ENCUESTA DE SERVICIO
+   ============================================ */
+.encuesta {
+  background: var(--blanco);
+  border-radius: var(--radius-md);
+}
+
+.encuesta--exito {
+  text-align: center;
+  padding: 32px 20px;
+}
+.encuesta--exito h3 { color: #059669; margin: 12px 0 8px; }
+.encuesta--exito p { color: var(--gris-500); max-width: 400px; margin: 0 auto; }
+
+.encuesta__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gris-200);
+}
+.encuesta__header h3 { margin: 0; color: var(--azul-primario); font-size: 1.1rem; }
+.encuesta__header p { margin: 4px 0 0; color: var(--gris-500); font-size: 0.85rem; }
+
+.encuesta__preguntas { margin-bottom: 20px; }
+.encuesta__pregunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gris-100);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.encuesta__pregunta label {
+  font-weight: 500;
+  color: var(--gris-700);
+  font-size: 0.9rem;
+}
+
+.encuesta-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.encuesta-star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: transform 0.15s;
+}
+.encuesta-star:hover { transform: scale(1.15); }
+.encuesta-star-label {
+  font-size: 0.75rem;
+  color: var(--gris-500);
+  margin-left: 8px;
+  min-width: 60px;
+}
+
+.encuesta__comentario { margin-bottom: 20px; }
+.encuesta__comentario label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--gris-700);
+  font-size: 0.9rem;
+}
+.encuesta__comentario textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gris-300);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.encuesta__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .agendar-cita__horas { grid-template-columns: repeat(4, 1fr); }
+  .cita-card { flex-direction: column; align-items: flex-start; }
+  .encuesta__pregunta { flex-direction: column; align-items: flex-start; }
+}
